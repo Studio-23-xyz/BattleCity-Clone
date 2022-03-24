@@ -155,14 +155,14 @@ namespace GameUtils
                 _listOfRandomTank.Add(0);
             }
 
-            Debug.Log("Spawned tank count "+ _listOfRandomTank.Count );
+            
 
             if (_listOfRandomTank.Count - Game.Instance._tanksToKill > 0)
             {
                 _listOfRandomTank.RemoveRange(Game.Instance._tanksToKill, _listOfRandomTank.Count - Game.Instance._tanksToKill);
             }
 
-            Debug.Log("Spawned tank count " + _listOfRandomTank.Count);
+            
 
         }
 
@@ -181,8 +181,6 @@ namespace GameUtils
         {
             
             _listOfRandomTank.RemoveAt(id);
-
-            Debug.Log("Spawned tank count " + _listOfRandomTank.Count);
         }
 
         private async void InitialTankGeneration()
@@ -263,7 +261,7 @@ namespace GameUtils
                 int random = Random.Range(0, 3);
                 _tanksGeneratedPerWave++;
 
-                Debug.Log("Random spawner : " + random);
+                
 
                 //if (!_generateAnimationStop)
                 await GenerateEnemyAnimation(random);

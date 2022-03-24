@@ -28,7 +28,8 @@ namespace Guns
         void Start()
         {
             _bulletPrefab.CanDestroySteel = false;
-            Debug.Log($"Can destroy :  {_bulletPrefab.CanDestroySteel}");
+           
+
 
         }
 
@@ -36,7 +37,6 @@ namespace Guns
         public virtual void Update()
         {
             
-            Debug.Log($"Can destroy :  {_bulletPrefab.CanDestroySteel} Instance type: {this.GetType()}");
         }
 
         /// <summary>

@@ -24,7 +24,8 @@ namespace Guns
         public override void Update()
         {
             base.Update();
-            Debug.Log($"Can destroy for player :  {_bulletPrefab.CanDestroySteel}");
+            
+
             _nextFiring -= Time.deltaTime;
         }
         public override void Shoot()
@@ -35,7 +36,8 @@ namespace Guns
                 if (_nextFiring <= 0)
                 {
 
-                    Debug.Log("Shooted From " + gameObject.name);
+                   
+
 
                     _nextFiring = FiringRate;
                     Bullet bullet = SpawnBullet();

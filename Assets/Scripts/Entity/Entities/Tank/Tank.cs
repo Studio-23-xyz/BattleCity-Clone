@@ -89,7 +89,8 @@ namespace Entities
         {
             if(damageCount <= 0)
             {
-                Debug.Log("No damage done");
+                
+
             }
 
             Health -= damageCount;

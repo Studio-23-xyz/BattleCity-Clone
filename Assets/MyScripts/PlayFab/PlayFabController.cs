@@ -308,10 +308,6 @@ public class PlayFabController : MonoBehaviour
         int i = 1;
 
         TotalHighScore = result.Leaderboard[0].StatValue;
-        Debug.Log("1st postion player score " + result.Leaderboard[0].StatValue);
-
-
-        Debug.Log("Called LeaderBoard");
 
         foreach (PlayerLeaderboardEntry player in result.Leaderboard)
         {
@@ -324,7 +320,7 @@ public class PlayFabController : MonoBehaviour
             ld.PlayerName.text = player.DisplayName;
             ld.PlayerScore.text = player.StatValue.ToString("00000");
 
-            Debug.Log(player.DisplayName + ": " + player.StatValue);
+            
 
             i++;
         }
@@ -362,7 +358,6 @@ public class PlayFabController : MonoBehaviour
         
         int i = 1;
 
-        Debug.Log("Called LeaderBoard Level");
 
         foreach (PlayerLeaderboardEntry player in result.Leaderboard)
         {
@@ -374,8 +369,6 @@ public class PlayFabController : MonoBehaviour
             //ld.PlayerRank.text = i.ToString("000");
             ld.PlayerName.text = player.DisplayName;
             ld.PlayerScore.text = player.StatValue.ToString("00000");
-
-            Debug.Log(player.DisplayName + ": " + player.StatValue);
 
             i++;
         }

@@ -8,7 +8,7 @@ namespace SceneEvents
         {
             base.TriggerEvent();
 
-            Debug.Log("Exiting game");
+           
             Application.Quit();
         }
     }

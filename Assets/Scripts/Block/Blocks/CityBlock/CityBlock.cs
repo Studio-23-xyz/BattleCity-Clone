@@ -42,7 +42,6 @@ namespace Blocks
             if (_currentState != _previousState && !Game.Instance.IsGamePaused)
             {
                 ChangeTile();
-                Debug.Log("Called this function");
             }
 
         }

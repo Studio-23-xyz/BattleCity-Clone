@@ -12,7 +12,8 @@ public class CollisonDetection : MonoBehaviour
 
         if (detection != null)
         {
-            Debug.Log(detection.name);
+           
+
         }
     }
 
@@ -30,7 +31,8 @@ public class CollisonDetection : MonoBehaviour
         
         if (col.transform.parent.CompareTag("dummy") && col.transform.parent.GetInstanceID() != gameObject.transform.parent.GetInstanceID())
         {
-            Debug.Log("Hello");
+            
+
         }
     }
 }

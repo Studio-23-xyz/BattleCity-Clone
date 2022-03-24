@@ -27,7 +27,8 @@ namespace Guns
         public override void Update()
         {
             base.Update();
-            Debug.Log($"Can destroy for player :  {_bulletPrefab.CanDestroySteel}");
+            
+
             _nextFiring -= Time.deltaTime;
         }
 
@@ -40,7 +41,8 @@ namespace Guns
                 _nextFiring = FiringRate;
                 for (int i = 0; i < _firingCount; i++)
                 {
-                    Debug.Log("Shooted From " + gameObject.name);
+                    
+
                     AudioManager.Instance.PlaySFX(TankShootingSfx);
                     Bullet bullet = SpawnBullet();
                     bullet.transform.position = Tank.transform.position + (Tank.transform.up * _shootOffsetDistance);

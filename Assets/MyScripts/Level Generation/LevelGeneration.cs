@@ -7,7 +7,7 @@ using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 
-// ReSharper disable All
+
 
 public class LevelGeneration : MonoBehaviour
 {
@@ -24,43 +24,25 @@ public class LevelGeneration : MonoBehaviour
     public Transform CityGenerationPoint;
     public float CityGenerationXOffset;
 
-    public GameObject[] PlayerSpawner;
 
 
+    public Collider2D[] BlocksForEnemy;
+    public Collider2D[] BlocksForPlayer;
+    public Waves Wave;
 
 
-    public Collider2D[] blocksForEnemy;
-    public Collider2D[] blocksForPlayer;
-    public Waves wave;
-
-
-    public float _resetTime;
-    
-
-    private int _direction;
-    private bool _generateRoom = true;
-    private GameObject CurrentRoom;
-    private int DownCounter;
-
-    private float _timeToGenerateRoom;
 
     public UnityEvent GeneratePlayer;
     public AudioClip LevelStartAudio;
-    public AudioClip PlayerIdleAudio;
 
-
-
-    void Awake()
-    {
-
-    }
 
     async void Start()
     {
         GenerateCity();
         AudioManager.Instance.PlayBGM(LevelStartAudio);
         await UniTask.Delay(TimeSpan.FromSeconds(LevelStartAudio.length - 2f), ignoreTimeScale: false);
-        //GeneratePlayerPosition();
+        GeneratePlayerPosition();
+        
     }
 
     
@@ -96,11 +78,11 @@ public class LevelGeneration : MonoBehaviour
     {
         for (int i = 0; i < StartingPosForEnemy.Length; i++)
         {
-            blocksForEnemy = Physics2D.OverlapCircleAll(StartingPosForEnemy[i].position, .5f);
+            BlocksForEnemy = Physics2D.OverlapCircleAll(StartingPosForEnemy[i].position, .5f);
 
-            if (blocksForEnemy != null)
+            if (BlocksForEnemy != null)
             {
-                foreach (var block in blocksForEnemy)
+                foreach (var block in BlocksForEnemy)
                 {
                     if (!block.gameObject.CompareTag("barrier"))
                         Destroy(block.gameObject);
@@ -113,12 +95,12 @@ public class LevelGeneration : MonoBehaviour
         for (int i = 0; i < 2; i++)
         {
             sign = -sign;
-            blocksForPlayer = Physics2D.OverlapCircleAll(new Vector3(CityGenerationPoint.position.x - CityGenerationXOffset * sign,
+            BlocksForPlayer = Physics2D.OverlapCircleAll(new Vector3(CityGenerationPoint.position.x - CityGenerationXOffset * sign,
                 CityGenerationPoint.position.y, CityGenerationPoint.position.z), Random.Range(.5f, 2f));
 
-            if (blocksForPlayer != null)
+            if (BlocksForPlayer != null)
             {
-                foreach (var block in blocksForPlayer)
+                foreach (var block in BlocksForPlayer)
                 {
                     if (!block.gameObject.CompareTag("barrier") && !block.gameObject.CompareTag("Player"))
                         Destroy(block.gameObject);
@@ -126,46 +108,20 @@ public class LevelGeneration : MonoBehaviour
             }
         }
 
-        GeneratePlayerPosition();
     }
 
     [ContextMenu("Generate Player")]
 
-    async void GeneratePlayerPosition()
+    void GeneratePlayerPosition()
     {
-
         GeneratePlayer?.Invoke();
-
-        /*foreach (var spawner in PlayerSpawner)
-        {
-            spawner.GetComponent<Spawner>().AnimationObject.SetActive(true);
-        }
-
-        await UniTask.Delay(TimeSpan.FromSeconds(1.5f), ignoreTimeScale: false);
-
-
-        foreach (var spawner in PlayerSpawner)
-        {
-            spawner.GetComponent<Spawner>().AnimationObject.SetActive(false);
-        }*/
-
-
-
-
-        /*PlayerTransform1.transform.position = new Vector3(CityGenerationPoint.position.x - CityGenerationXOffset,
-            CityGenerationPoint.position.y, CityGenerationPoint.position.z);
-
-        PlayerTransform2.transform.position = new Vector3(CityGenerationPoint.position.x + CityGenerationXOffset,
-            CityGenerationPoint.position.y, CityGenerationPoint.position.z);*/
-
         GenerateWave();
-
     }
 
     [ContextMenu("Generate Enemy Wave")]
     void GenerateWave()
     {
-        wave.WaveGeneration = true;
+        Wave.WaveGeneration = true;
     }
 
 

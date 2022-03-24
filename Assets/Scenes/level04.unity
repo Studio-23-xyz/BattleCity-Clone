@@ -1553,7 +1553,6 @@ MonoBehaviour:
   _spawnObject: []
   _spawnPoint: {fileID: 0}
   AnimationObject: {fileID: 1950592628}
-  Tank: {fileID: 0}
 --- !u!4 &94935906
 Transform:
   m_ObjectHideFlags: 0
@@ -5024,7 +5023,6 @@ MonoBehaviour:
   - {fileID: 6026463467879904982, guid: 5ff5d7bfdf443b04c8c2873d34b518cb, type: 3}
   _spawnPoint: {fileID: 151648800}
   AnimationObject: {fileID: 2072160840}
-  Tank: {fileID: 0}
 --- !u!4 &288619523
 Transform:
   m_ObjectHideFlags: 0
@@ -6171,7 +6169,6 @@ MonoBehaviour:
   - {fileID: 7086040485814057189, guid: 3a15e7304d0122048900275b0ef77908, type: 3}
   _spawnPoint: {fileID: 335215004}
   AnimationObject: {fileID: 1324070139}
-  Tank: {fileID: 0}
 --- !u!4 &335215004
 Transform:
   m_ObjectHideFlags: 0
@@ -9002,6 +8999,10 @@ PrefabInstance:
       value: LevelGeneration
       objectReference: {fileID: 0}
     - target: {fileID: 1472497847687021441, guid: 07a7aa56516918942b4205ed275ddc01, type: 3}
+      propertyPath: Wave
+      value: 
+      objectReference: {fileID: 1325385203}
+    - target: {fileID: 1472497847687021441, guid: 07a7aa56516918942b4205ed275ddc01, type: 3}
       propertyPath: wave
       value: 
       objectReference: {fileID: 1325385203}
@@ -9203,23 +9204,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1472497847687021441, guid: 07a7aa56516918942b4205ed275ddc01, type: 3}
       propertyPath: GeneratePlayer.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1472497847687021441, guid: 07a7aa56516918942b4205ed275ddc01, type: 3}
       propertyPath: GeneratePlayer.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 335215003}
+      objectReference: {fileID: 2011800981}
     - target: {fileID: 1472497847687021441, guid: 07a7aa56516918942b4205ed275ddc01, type: 3}
       propertyPath: GeneratePlayer.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1472497847687021441, guid: 07a7aa56516918942b4205ed275ddc01, type: 3}
       propertyPath: GeneratePlayer.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Spawn
+      value: TriggerEvent
       objectReference: {fileID: 0}
     - target: {fileID: 1472497847687021441, guid: 07a7aa56516918942b4205ed275ddc01, type: 3}
       propertyPath: GeneratePlayer.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameUtils.Spawner, Assembly-CSharp
+      value: SceneEvents.OnPlayerTankKilled, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1472497847687021441, guid: 07a7aa56516918942b4205ed275ddc01, type: 3}
       propertyPath: GeneratePlayer.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
@@ -11526,7 +11527,6 @@ MonoBehaviour:
   - {fileID: 6026463467879904982, guid: 5ff5d7bfdf443b04c8c2873d34b518cb, type: 3}
   _spawnPoint: {fileID: 1574541511}
   AnimationObject: {fileID: 120771423}
-  Tank: {fileID: 0}
 --- !u!4 &669259719
 Transform:
   m_ObjectHideFlags: 0
@@ -26349,7 +26349,6 @@ MonoBehaviour:
   - {fileID: 6026463467879904982, guid: 5ff5d7bfdf443b04c8c2873d34b518cb, type: 3}
   _spawnPoint: {fileID: 23092397}
   AnimationObject: {fileID: 2130942537}
-  Tank: {fileID: 0}
 --- !u!4 &1620981411
 Transform:
   m_ObjectHideFlags: 0

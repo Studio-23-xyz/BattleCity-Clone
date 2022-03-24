@@ -52,7 +52,8 @@ namespace GameUtils
             {
                 StatisticsCollector.UpdateTotalScore();
                 StatisticsCollector.SetStageLevel();
-                Debug.Log("All tanks killed");
+                
+
                 
                 Triggers.OnLevelDone.Invoke();
             }

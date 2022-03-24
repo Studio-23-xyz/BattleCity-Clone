@@ -45,7 +45,8 @@ namespace Entities
 
         public override void Move(Vector2 moveVector)
         {
-            Debug.Log("Called from enemytank");
+            
+
             base.Move(moveVector);
         }
 
@@ -91,7 +92,8 @@ namespace Entities
 
             Game.Instance.Triggers.OnTankKilled.Invoke(_killingValue);
 
-            Debug.Log( _enemyType + " killed " + DestroyedTank.instance.TankTypeDestroyed[_enemyType]);
+           
+
 
             base.Die(deathOwner);
         }

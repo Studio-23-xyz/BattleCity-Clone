@@ -67,7 +67,8 @@ namespace Entities
                 LookAt(moveVector);
             }
 
-            Debug.Log("Called Move Function");
+            
+
             movePosition = moveVector;
 
 
@@ -97,12 +98,14 @@ namespace Entities
             {
                 AudioManager.Instance.PlayBackGroundSFX(PlayerMovement);
             }
-            Debug.Log("called from player movement");
+            
+
 
             
             Move(context.ReadValue<Vector2>());
 
-            Debug.Log("Called from player input "+ context.ReadValue<Vector2>());
+            
+
         }
 
         public void ShootFromPlayer(InputAction.CallbackContext context)

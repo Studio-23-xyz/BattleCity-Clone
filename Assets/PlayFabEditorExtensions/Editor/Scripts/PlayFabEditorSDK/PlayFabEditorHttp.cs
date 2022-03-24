@@ -38,7 +38,9 @@ namespace PlayFab.PfEditor
 
             var fileSaveLocation = PlayFabEditorHelper.EDEX_ROOT + fileName;
             var fileSaveDirectory = Path.GetDirectoryName(fileSaveLocation);
-            Debug.Log("Saving " + response.Length + " bytes to: " + fileSaveLocation);
+            
+            
+            //("Saving " + response.Length + " bytes to: " + fileSaveLocation);
             if (!Directory.Exists(fileSaveDirectory))
                 Directory.CreateDirectory(fileSaveDirectory);
             File.WriteAllBytes(fileSaveLocation, response);

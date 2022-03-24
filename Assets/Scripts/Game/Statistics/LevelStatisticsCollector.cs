@@ -41,7 +41,8 @@ namespace Statistics
 
         public void OnTankKilled(int score)
         {
-            Debug.Log("called score : "+ score);
+            
+
             Statistics.TanksKilled++;
             UpdateScore(score);
         }
@@ -80,7 +81,8 @@ namespace Statistics
 
             if (PlayerPrefs.HasKey("TotalScore"))
             {
-                Debug.Log("Update total score is avilable");
+                
+
             }
 
         }

@@ -13,11 +13,8 @@ namespace GameUtils
     public class Spawner : Thing
     {
         public Thing[] _spawnObject;
-
         [SerializeField] private Transform _spawnPoint;
         public GameObject AnimationObject;
-        public Thing Tank;
-        private SpawnerTank _spawnerTank;
 
 
         /// <summary>

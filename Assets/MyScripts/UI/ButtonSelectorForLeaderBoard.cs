@@ -20,7 +20,8 @@ public class ButtonSelectorForLeaderBoard : MonoBehaviour
         if (!gameObject.activeInHierarchy)
             return;
 
-        Debug.Log(("Naviagtion Button CLicked"));
+      
+
 
         if (context.performed)
         {

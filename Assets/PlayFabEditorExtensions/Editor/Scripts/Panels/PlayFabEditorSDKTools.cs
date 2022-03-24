@@ -217,7 +217,8 @@ namespace PlayFab.PfEditor
         {
             PlayFabEditorHttp.MakeDownloadCall("https://aka.ms/PlayFabUnitySdk", (fileName) =>
             {
-                Debug.Log("PlayFab SDK Install: Complete");
+                
+                //("PlayFab SDK Install: Complete");
                 AssetDatabase.ImportPackage(fileName, false);
 
                 // attempts to re-import any changed assets (which ImportPackage doesn't implicitly do)
