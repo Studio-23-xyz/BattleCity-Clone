@@ -51,7 +51,7 @@ namespace GameUtils
 
             AnimationObject.SetActive(false);
 
-            Tank = Spawn();
+            Spawn();
         }
 
         private void FlashyAnimation(Thing Tank)
