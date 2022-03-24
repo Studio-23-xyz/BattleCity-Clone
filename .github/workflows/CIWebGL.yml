@@ -39,7 +39,7 @@ jobs:
         with:
           path: build/WebGL
           project: dipok/bs23-battlecity
-          channel: Playable in browser
+          channel: HTML5
           version: ${{ steps.unityBuild.outputs.buildVersion}}
           api-key: ${{ secrets.ITCH_API_KEY }}
        
