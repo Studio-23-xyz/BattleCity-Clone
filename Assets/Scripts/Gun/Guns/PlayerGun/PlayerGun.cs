@@ -17,10 +17,12 @@ namespace Guns
         [SerializeField]private int _gunTier;
         [SerializeField] private int _firingCount;
         [SerializeField] private bool _destroySteel;
+        [SerializeField] private float _bulletSpeed;
 
         void Start()
         {
             _firingCount = 1;
+            _bulletSpeed = 4f;
             ChangeGunPower(GetGunTier());
         }
 
@@ -43,6 +45,7 @@ namespace Guns
                     Debug.Log("Shooted From " + gameObject.name);
                     AudioManager.Instance.PlaySFX(TankShootingSfx);
                     Bullet bullet = SpawnBullet();
+                    bullet._bulletSpeed = _bulletSpeed;
                     bullet.transform.position = Tank.transform.position + (Tank.transform.up * _shootOffsetDistance);
                     bullet.Follow(Tank.transform.up, Tank);
                     bullet.CanDestroySteel = _destroySteel;
@@ -66,7 +69,7 @@ namespace Guns
         {
             if (tier >= 1)
             {
-                FiringRate = .2f;
+                _bulletSpeed = 6f;
             }
 
             if (tier >= 2)

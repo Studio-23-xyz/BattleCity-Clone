@@ -10,7 +10,7 @@ namespace Entities
         [HideInInspector] public Entity Owner;
         public int DamageCount = 1;
 
-        [SerializeField] private float _bulletSpeed;
+        public float _bulletSpeed;
         private Vector2 _followDirection;
         private bool _isFollowing;
 

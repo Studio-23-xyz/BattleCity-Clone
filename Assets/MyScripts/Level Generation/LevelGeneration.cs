@@ -16,7 +16,7 @@ public class LevelGeneration : MonoBehaviour
 
 
 
-    
+
     public Transform[] StartingPosForEnemy;
 
 
@@ -35,7 +35,7 @@ public class LevelGeneration : MonoBehaviour
 
 
     public float _resetTime;
-    
+
 
     private int _direction;
     private bool _generateRoom = true;
@@ -60,10 +60,10 @@ public class LevelGeneration : MonoBehaviour
         GenerateCity();
         AudioManager.Instance.PlayBGM(LevelStartAudio);
         await UniTask.Delay(TimeSpan.FromSeconds(LevelStartAudio.length - 2f), ignoreTimeScale: false);
-        //GeneratePlayerPosition();
+        GeneratePlayerPosition();
     }
 
-    
+
 
     [ContextMenu("Generate City")]
     void GenerateCity()
@@ -79,7 +79,7 @@ public class LevelGeneration : MonoBehaviour
     {
         foreach (var room in AllRoomPoint)
         {
-            var chunk=Instantiate(Rooms[Random.Range(0, Rooms.Length)], room.transform.position, Quaternion.identity);
+            var chunk = Instantiate(Rooms[Random.Range(0, Rooms.Length)], room.transform.position, Quaternion.identity);
             SpawnPoint chunkPoint = chunk.GetComponent<SpawnPoint>();
             chunkPoint.Initialize();
 
@@ -125,8 +125,6 @@ public class LevelGeneration : MonoBehaviour
                 }
             }
         }
-
-        GeneratePlayerPosition();
     }
 
     [ContextMenu("Generate Player")]

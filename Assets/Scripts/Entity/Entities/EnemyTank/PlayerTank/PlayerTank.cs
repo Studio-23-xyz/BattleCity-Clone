@@ -12,7 +12,8 @@ namespace Entities
         public AudioClip PlayerMovement;
         public AudioClip PlayerIdleAudio;
         public AudioClip PlayerDyingAudio;
-        private Vector2 movePosition;
+        public Vector2 movePosition;
+        public bool collison;
 
         public override void Awake()
         {
@@ -28,6 +29,9 @@ namespace Entities
         {
             base.Update();
             
+            if(collison)
+                return;
+
             if(Game.Instance.IsGamePaused)
                 movePosition  = Vector2.zero;
             transform.position += new Vector3(movePosition.x, movePosition.y, 0f) * MoveSpeed * Time.deltaTime;
@@ -120,7 +124,6 @@ namespace Entities
 
             Gun.Shoot();
         }
-
 
     }
 }

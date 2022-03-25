@@ -67,7 +67,7 @@ namespace GameUtils
             }
 
            
-            _tanksToKill = Mathf.Clamp((PlayerPrefs.GetInt("StageCount")) * 3, 3, 30);
+            _tanksToKill = Mathf.Clamp((PlayerPrefs.GetInt("StageCount")) * 6, 3, 30);
             
         }
 
