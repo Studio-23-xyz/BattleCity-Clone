@@ -21,7 +21,7 @@
             {
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "buildOutputDirList",
-                "value": "{\"m_Value\":\"C:/Users/dipok/Music/dev;C:/Users/dipok/Music/a lot;C:/Users/dipok/Music/webgl publisher;;;;;;;\"}"
+                "value": "{\"m_Value\":\"C:/Users/BS805/Desktop/Webgl build/script only;C:/Users/BS805/Desktop/Webgl build/full stack;C:/Users/dipok/Music/dev;C:/Users/dipok/Music/a lot;C:/Users/dipok/Music/webgl publisher;;;;;\"}"
             }
         ]
     }
