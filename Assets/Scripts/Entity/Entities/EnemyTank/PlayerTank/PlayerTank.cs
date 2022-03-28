@@ -32,8 +32,12 @@ namespace Entities
             if(collison)
                 return;
 
-            if(Game.Instance.IsGamePaused)
-                movePosition  = Vector2.zero;
+            if (Game.Instance.IsGamePaused || !Game.Instance.MovePlayer)
+            {
+                movePosition = Vector2.zero;
+                Game.Instance.MovePlayer = true;
+            }
+                
             transform.position += new Vector3(movePosition.x, movePosition.y, 0f) * MoveSpeed * Time.deltaTime;
 
             

@@ -13,7 +13,7 @@ namespace Entities
         [SerializeField] private IdleEnemyTankAIState _idleState;
         [SerializeField] private MovingToPointEnemyTankAIState _movingToPointState;
         [SerializeField] private ShootingEnemyTankAIState _shootingState;
-        private bool _isStateRunning;
+        public bool _isStateRunning;
 
         public override void Init(Entity entity)
         {
@@ -34,6 +34,7 @@ namespace Entities
                 return;
             }
 
+         
 
             if(!_isStateRunning) setNewAiState();
 

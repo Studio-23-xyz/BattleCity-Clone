@@ -11,6 +11,7 @@ TagManager:
   - Game
   - Water
   - Pause
+  - Enemy
   layers:
   - Default
   - TransparentFX

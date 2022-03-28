@@ -19,8 +19,10 @@ namespace Entities
         public GameObject DummyPowerUp;
 
         public GameObject TankDestroyEffect;
+        public bool HitPlayer;
 
-        
+
+
 
 
 
@@ -36,8 +38,10 @@ namespace Entities
         public override void Update()
         {
             base.Update();
-            if (_powerUps.Timer || Game.Instance.IsGamePaused)
+            if (_powerUps.Timer || Game.Instance.IsGamePaused || HitPlayer)
             {
+                HitPlayer = false;
+                _enemyTankAI._isStateRunning = false;
                 StopMoving();
             }
 

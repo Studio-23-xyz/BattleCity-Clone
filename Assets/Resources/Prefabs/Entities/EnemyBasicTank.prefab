@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2622257025276193543}
   m_Layer: 9
   m_Name: Collison Blocker
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -207,9 +207,10 @@ GameObject:
   - component: {fileID: 8215817301200242967}
   - component: {fileID: 210296949592782140}
   - component: {fileID: 5400120903187343459}
+  - component: {fileID: 3891511920468896405}
   m_Layer: 8
   m_Name: EnemyBasicTank
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -246,7 +247,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.5
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: ed8e8599e932d1d49b1390396fe158c8, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -260,7 +261,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 8215817301200242970}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: ed8e8599e932d1d49b1390396fe158c8, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -320,6 +321,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
       _idleDelay: 0.3
+    _isStateRunning: 0
   _killingValue: 100
   _enemyType: 0
   DamagedTankSprite: []
@@ -334,6 +336,7 @@ MonoBehaviour:
   - {fileID: 1080060827509945387, guid: 10677c819830cc14e9b828226d9342db, type: 3}
   DummyPowerUp: {fileID: 6104127678957242693, guid: 70a2dce2993098d46baf76213aa2bac4, type: 3}
   TankDestroyEffect: {fileID: 701701888199236892, guid: c7819bac43e860b4f9f5af67a2abeb43, type: 3}
+  HitPlayer: 0
 --- !u!114 &8215817301200242967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,7 +353,7 @@ MonoBehaviour:
   TankShootingSfx: {fileID: 0}
   _shootOffsetDistance: 0.6
   _destroySteel: 0
-  FiringRate: 0.6
+  FiringRate: 50
 --- !u!95 &210296949592782140
 Animator:
   serializedVersion: 3
@@ -384,3 +387,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 8215817301200242964}
   characterBlocker: {fileID: 2622257025276193543}
+--- !u!114 &3891511920468896405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8215817301200242970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6e4b3b83077bda4c9e27eae330a0e33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
