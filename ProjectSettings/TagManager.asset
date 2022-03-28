@@ -11,6 +11,7 @@ TagManager:
   - Game
   - Water
   - Pause
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - UI
   - Room
   - Player
-  - 
-  - 
+  - Character
+  - CharacterBlocker
   - 
   - 
   - 

@@ -13,7 +13,8 @@ namespace Entities
         [SerializeField] private IdleEnemyTankAIState _idleState;
         [SerializeField] private MovingToPointEnemyTankAIState _movingToPointState;
         [SerializeField] private ShootingEnemyTankAIState _shootingState;
-        private bool _isStateRunning;
+        public EnemyTankType TankType;
+        public bool _isStateRunning;
 
         public override void Init(Entity entity)
         {
@@ -22,7 +23,7 @@ namespace Entities
             _idleState.Init(Self);
             _movingToPointState.Init(Self);
             _shootingState.Init(Self);
-
+            
             setNewAiState();
         }
         public override void UpdateAI()
@@ -95,7 +96,10 @@ namespace Entities
         }
         public virtual void RunMovingToPointState()
         {
+            
             _movingToPointState.RunState(OnStateEnd);
+            
+            
         }
         public virtual void RunShootingState()
         {

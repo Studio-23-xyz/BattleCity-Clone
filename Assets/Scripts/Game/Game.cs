@@ -19,6 +19,8 @@ namespace GameUtils
         public int _tanksToKill;
         public bool isLevelDone;
         public bool IsGamePaused;
+        public bool MovePlayer;
+        public bool checkCollison;
 
         public override void Awake()
         {

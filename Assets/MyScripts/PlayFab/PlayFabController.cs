@@ -10,6 +10,10 @@ using TMPro;
 
 public class PlayFabController : MonoBehaviour
 {
+    public static PlayFabController Instance;
+
+    #region LoginData
+
     private string _userEmail = " ";
     private string _userPassword = " ";
     private string _userName = " ";
@@ -19,11 +23,7 @@ public class PlayFabController : MonoBehaviour
     public GameObject LoginPanel;
     public GameObject StartingPanel;
 
-    public static PlayFabController Instance;
-    private bool LoadLoginPanel = true;
-
-    
-
+    #endregion
 
 
     #region Player_Data_To_Be_Stored

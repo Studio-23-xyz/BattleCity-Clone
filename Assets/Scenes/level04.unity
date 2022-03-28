@@ -1381,6 +1381,10 @@ PrefabInstance:
       value: SteelWallBlockSingle (80)
       objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_TagString
       value: barrier
       objectReference: {fileID: 0}
@@ -2975,6 +2979,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8811265407192102479}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (46)
@@ -3764,6 +3772,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8811265407192102479}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (73)
@@ -4047,6 +4059,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8811265407192102479}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (44)
@@ -4113,6 +4129,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8811265407192102479}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (67)
@@ -4441,16 +4461,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 255757621}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 795418adc195604449fc0ca9706fc091, type: 3}
+  m_PointAction: {fileID: 3100979773606204703, guid: 795418adc195604449fc0ca9706fc091, type: 3}
+  m_MoveAction: {fileID: -4919195566381544087, guid: 795418adc195604449fc0ca9706fc091, type: 3}
+  m_SubmitAction: {fileID: 6760649574166554397, guid: 795418adc195604449fc0ca9706fc091, type: 3}
+  m_CancelAction: {fileID: -462254416549509755, guid: 795418adc195604449fc0ca9706fc091, type: 3}
+  m_LeftClickAction: {fileID: 790617092987357300, guid: 795418adc195604449fc0ca9706fc091, type: 3}
+  m_MiddleClickAction: {fileID: -1305207962914752262, guid: 795418adc195604449fc0ca9706fc091, type: 3}
+  m_RightClickAction: {fileID: -7817882845724378418, guid: 795418adc195604449fc0ca9706fc091, type: 3}
+  m_ScrollWheelAction: {fileID: -1885213550543652265, guid: 795418adc195604449fc0ca9706fc091, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 2139750520713931949, guid: 795418adc195604449fc0ca9706fc091, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: -7973126377863531781, guid: 795418adc195604449fc0ca9706fc091, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
 --- !u!114 &255757623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6141,7 +6169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnObject:
   - {fileID: 7086040485814057189, guid: 3a15e7304d0122048900275b0ef77908, type: 3}
-  _spawnPoint: {fileID: 0}
+  _spawnPoint: {fileID: 335215004}
   AnimationObject: {fileID: 1324070139}
   Tank: {fileID: 0}
 --- !u!4 &335215004
@@ -6253,6 +6281,10 @@ PrefabInstance:
       value: SteelWallBlockSingle (82)
       objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_TagString
       value: barrier
       objectReference: {fileID: 0}
@@ -6317,6 +6349,10 @@ PrefabInstance:
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (65)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_TagString
@@ -8014,6 +8050,106 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &468634581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 468634585}
+  - component: {fileID: 468634584}
+  - component: {fileID: 468634583}
+  - component: {fileID: 468634582}
+  m_Layer: 5
+  m_Name: ScoreCanvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &468634582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468634581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &468634583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468634581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0.5
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &468634584
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468634581}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &468634585
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468634581}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 2093880343}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &474456299
 GameObject:
   m_ObjectHideFlags: 0
@@ -9155,6 +9291,10 @@ PrefabInstance:
       value: SteelWallBlockSingle (95)
       objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_TagString
       value: barrier
       objectReference: {fileID: 0}
@@ -9402,6 +9542,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8811265407192102479}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (120)
@@ -12138,6 +12282,10 @@ PrefabInstance:
       value: SteelWallBlockSingle (93)
       objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_TagString
       value: barrier
       objectReference: {fileID: 0}
@@ -12281,6 +12429,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8811265407192102479}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (124)
@@ -14301,6 +14453,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8811265407192102479}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (47)
@@ -14586,6 +14742,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8811265407192102479}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (45)
@@ -14734,6 +14894,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8811265407192102479}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (119)
@@ -14997,6 +15161,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8811265407192102479}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (42)
@@ -15212,6 +15380,10 @@ PrefabInstance:
       value: SteelWallBlockSingle (90)
       objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_TagString
       value: barrier
       objectReference: {fileID: 0}
@@ -15273,6 +15445,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8811265407192102479}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (66)
@@ -15339,6 +15515,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8811265407192102479}
     m_Modifications:
+    - target: {fileID: 6473218286699510961, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (48)
@@ -18966,6 +19146,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8811265407192102479}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (111)
@@ -19643,6 +19827,10 @@ PrefabInstance:
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (99)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_TagString
@@ -22253,6 +22441,8 @@ MonoBehaviour:
   _tanksToKill: 0
   isLevelDone: 0
   IsGamePaused: 0
+  MovePlayer: 1
+  checkCollison: 0
 --- !u!4 &1325385205
 Transform:
   m_ObjectHideFlags: 0
@@ -22367,6 +22557,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8811265407192102479}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (113)
@@ -22565,6 +22759,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8811265407192102479}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (75)
@@ -22845,6 +23043,10 @@ PrefabInstance:
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (103)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_TagString
@@ -24717,6 +24919,10 @@ PrefabInstance:
       value: SteelWallBlockSingle (96)
       objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_TagString
       value: barrier
       objectReference: {fileID: 0}
@@ -24778,6 +24984,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8811265407192102479}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (41)
@@ -26708,6 +26918,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8811265407192102479}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (115)
@@ -26777,6 +26991,10 @@ PrefabInstance:
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (84)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_TagString
@@ -26925,6 +27143,10 @@ PrefabInstance:
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (85)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_TagString
@@ -27635,6 +27857,10 @@ PrefabInstance:
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (62)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_TagString
@@ -28871,6 +29097,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8811265407192102479}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (43)
@@ -29156,6 +29386,10 @@ PrefabInstance:
       value: SteelWallBlockSingle (86)
       objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_TagString
       value: barrier
       objectReference: {fileID: 0}
@@ -29350,6 +29584,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8811265407192102479}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (68)
@@ -29634,6 +29872,10 @@ PrefabInstance:
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (81)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_TagString
@@ -30632,6 +30874,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8811265407192102479}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (70)
@@ -30842,6 +31088,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8811265407192102479}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (79)
@@ -31400,7 +31650,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2093880342}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 464680871}
@@ -31410,8 +31660,8 @@ Transform:
   - {fileID: 2056893817}
   - {fileID: 1252444612}
   - {fileID: 984579160}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 468634585}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2096840986
 GameObject:
@@ -32107,6 +32357,10 @@ PrefabInstance:
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockSingle (78)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_TagString
