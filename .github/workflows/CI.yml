@@ -1,7 +1,7 @@
 name: Unity CI Pipeline 🎻
 
 on: 
-    push: { branches: [Procedural] } 
+    push: { branches: [main] } 
 
 env:
     UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
