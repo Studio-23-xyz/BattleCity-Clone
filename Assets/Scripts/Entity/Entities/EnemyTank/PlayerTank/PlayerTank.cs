@@ -13,12 +13,15 @@ namespace Entities
         public AudioClip PlayerIdleAudio;
         public AudioClip PlayerDyingAudio;
         public Vector2 movePosition;
-        public bool collison;
+
+        public Vector2 PreviousInput;
+
+        public int x;
 
         public override void Awake()
         {
             base.Awake();
-
+            x = 0;
 
             AI = _playerTankAI;
 
@@ -28,19 +31,20 @@ namespace Entities
         public override void Update()
         {
             base.Update();
-            
-            if(collison)
-                return;
 
             if (Game.Instance.IsGamePaused || !Game.Instance.MovePlayer)
             {
                 movePosition = Vector2.zero;
-                Game.Instance.MovePlayer = true;
+                //Game.Instance.MovePlayer = true;
             }
-                
-            transform.position += new Vector3(movePosition.x, movePosition.y, 0f) * MoveSpeed * Time.deltaTime;
+            else if(Game.Instance.MovePlayer)
+            {
+                Move(PreviousInput);
+                transform.position += new Vector3(movePosition.x, movePosition.y, 0f) * MoveSpeed * Time.deltaTime;
 
-            
+            }
+
+
         }
 
         public override void Damage(int damageCount, Entity damageOwner)
@@ -67,15 +71,14 @@ namespace Entities
                 movePosition = Vector2.zero;
                 return;
             }
-                
 
+            
 
             if (moveVector.x != 0 || moveVector.y != 0)
             {
                 LookAt(moveVector);
             }
 
-            Debug.Log("Called Move Function");
             movePosition = moveVector;
 
 
@@ -83,6 +86,9 @@ namespace Entities
 
         public void MovePlayer(InputAction.CallbackContext context)
         {
+
+
+
             if (Game.Instance.isLevelDone)
             {
                 GetComponent<PlayerInput>().enabled = false;
@@ -107,10 +113,13 @@ namespace Entities
             }
             Debug.Log("called from player movement");
 
-            
+
+            PreviousInput = context.ReadValue<Vector2>();
+
             Move(context.ReadValue<Vector2>());
 
-            Debug.Log("Called from player input "+ context.ReadValue<Vector2>());
+            Debug.Log("Called from player input " +x +" "+ context.ReadValue<Vector2>());
+            x++;
         }
 
         public void ShootFromPlayer(InputAction.CallbackContext context)

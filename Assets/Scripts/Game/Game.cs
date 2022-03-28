@@ -20,6 +20,7 @@ namespace GameUtils
         public bool isLevelDone;
         public bool IsGamePaused;
         public bool MovePlayer;
+        public bool checkCollison;
 
         public override void Awake()
         {
@@ -68,7 +69,7 @@ namespace GameUtils
             }
 
            
-            _tanksToKill = Mathf.Clamp((PlayerPrefs.GetInt("StageCount")) * 6, 3, 30);
+            _tanksToKill = Mathf.Clamp((PlayerPrefs.GetInt("StageCount")) * 3, 3, 30);
             
         }
 

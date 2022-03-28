@@ -18,6 +18,7 @@ namespace Guns
         [SerializeField] private int _firingCount;
         [SerializeField] private bool _destroySteel;
         [SerializeField] private float _bulletSpeed;
+        private Bullet _previousBullet;
 
         void Start()
         {
@@ -37,7 +38,7 @@ namespace Guns
         {
 
 
-            if (_nextFiring <= 0)
+            if (_nextFiring <= 0 && _previousBullet == null)
             {
                 _nextFiring = FiringRate;
                 for (int i = 0; i < _firingCount; i++)
@@ -50,6 +51,7 @@ namespace Guns
                     bullet.Follow(Tank.transform.up, Tank);
                     bullet.CanDestroySteel = _destroySteel;
                     bullet.Type = BulletType.PlayerBullet;
+                    _previousBullet = bullet;
                     await UniTask.Delay(TimeSpan.FromSeconds(.2f));
                 }
             }

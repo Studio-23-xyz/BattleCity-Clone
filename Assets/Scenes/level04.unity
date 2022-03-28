@@ -22442,7 +22442,7 @@ MonoBehaviour:
   isLevelDone: 0
   IsGamePaused: 0
   MovePlayer: 1
-  HitPlayer: 0
+  checkCollison: 0
 --- !u!4 &1325385205
 Transform:
   m_ObjectHideFlags: 0
