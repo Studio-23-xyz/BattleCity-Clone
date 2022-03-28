@@ -179,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AI:
     Self: {fileID: 0}
-  MoveSpeed: 2
+  MoveSpeed: 3.3
   _maxHealth: 4
   _rigidbody: {fileID: 6026463467879904984}
   _spriteContainer: {fileID: 6026463468413275335}
@@ -202,12 +202,14 @@ MonoBehaviour:
           m_Calls: []
       _raycastForwardOffset: 0.5
       _moveSpeed: 0
+      SetTargetPos: 0
     _shootingState:
       Self: {fileID: 0}
       onStateStop:
         m_PersistentCalls:
           m_Calls: []
       _idleDelay: 0.3
+    TankType: 0
     _isStateRunning: 0
   _killingValue: 400
   _enemyType: 3
@@ -243,6 +245,7 @@ MonoBehaviour:
   _shootOffsetDistance: 0.6
   _destroySteel: 0
   FiringRate: 0.4
+  bulletSpeed: 2.5
 --- !u!95 &9181090748659391982
 Animator:
   serializedVersion: 3

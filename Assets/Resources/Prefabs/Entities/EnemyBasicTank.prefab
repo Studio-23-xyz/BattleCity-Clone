@@ -292,7 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AI:
     Self: {fileID: 0}
-  MoveSpeed: 3
+  MoveSpeed: 1.8
   _maxHealth: 1
   _rigidbody: {fileID: 8215817301200242965}
   _spriteContainer: {fileID: 8215817299596243722}
@@ -356,7 +356,7 @@ MonoBehaviour:
   _shootOffsetDistance: 0.6
   _destroySteel: 0
   FiringRate: 0.6
-  bulletSpeed: 6
+  bulletSpeed: 1.8
 --- !u!95 &210296949592782140
 Animator:
   serializedVersion: 3

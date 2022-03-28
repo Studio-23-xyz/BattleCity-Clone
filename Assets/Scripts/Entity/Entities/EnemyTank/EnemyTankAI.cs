@@ -53,11 +53,11 @@ namespace Entities
             Array values = Enum.GetValues(typeof(EnemyTankAIState));
 
             EnemyTankAIState randomBar = 
-                (EnemyTankAIState)values.GetValue(UnityEngine.Random.Range(0, values.Length));
+                (EnemyTankAIState)values.GetValue(UnityEngine.Random.Range(1, values.Length));
 
             if(_lastState == randomBar)
             {
-                _state = _state = EnemyTankAIState.Idle;
+                _state = _state = EnemyTankAIState.Shooting;
             }
             else
             {
