@@ -15,6 +15,7 @@ namespace GameUtils
         public UnityEvent OnPlayerTanksEnd;
         public UnityEvent OnLevelDone;
         public UnityEvent OnLevelPaused;
+        public UnityEvent PlayerGenerated;
     }
 
     [System.Serializable]

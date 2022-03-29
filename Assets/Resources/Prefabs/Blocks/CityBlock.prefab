@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 2661605824169579136}
   - component: {fileID: 2661605824169579144}
   - component: {fileID: 2661605824169579149}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CityBlock
   m_TagString: barrier
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2848987701961367901}
   - component: {fileID: 2848987701961367900}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: block_steelwall_full
   m_TagString: barrier
   m_Icon: {fileID: 0}
@@ -615,9 +615,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2661605824169579136}
     m_Modifications:
+    - target: {fileID: 4412515973628987827, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4492948362357946978, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
       propertyPath: m_Name
       value: SteelWallBlock (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492948362357946978, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4492948362357946978, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
       propertyPath: m_IsActive
@@ -693,9 +701,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2661605824169579136}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockRightTop
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_IsActive
@@ -764,9 +780,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2661605824169579136}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockTopLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_IsActive
@@ -938,9 +962,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2661605824169579136}
     m_Modifications:
+    - target: {fileID: 4412515973628987827, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4492948362357946978, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
       propertyPath: m_Name
       value: SteelWallBlock (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492948362357946978, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4492948362357946978, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
       propertyPath: m_IsActive
@@ -1246,9 +1278,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2661605824169579136}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockLeftBottom
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_IsActive
@@ -1317,9 +1357,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2661605824169579136}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockTopMiddle1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_IsActive
@@ -1388,9 +1436,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2661605824169579136}
     m_Modifications:
+    - target: {fileID: 4412515973628987827, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4492948362357946978, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
       propertyPath: m_Name
       value: SteelWallBlock (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492948362357946978, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4492948362357946978, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
       propertyPath: m_IsActive
@@ -1466,9 +1522,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2661605824169579136}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockTopMiddle2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_IsActive
@@ -1652,9 +1716,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2661605824169579136}
     m_Modifications:
+    - target: {fileID: 4412515973628987827, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4492948362357946978, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
       propertyPath: m_Name
       value: SteelWallBlock (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492948362357946978, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4492948362357946978, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
       propertyPath: m_IsActive
@@ -1833,9 +1905,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2661605824169579136}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockTopLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_IsActive
@@ -1905,12 +1985,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 2661605824169579136}
     m_Modifications:
     - target: {fileID: 4412515973628987827, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412515973628987827, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4492948362357946978, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
       propertyPath: m_Name
       value: SteelWallBlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492948362357946978, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4492948362357946978, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
       propertyPath: m_IsActive
@@ -2089,9 +2177,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2661605824169579136}
     m_Modifications:
+    - target: {fileID: 4412515973628987827, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4492948362357946978, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
       propertyPath: m_Name
       value: SteelWallBlock (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492948362357946978, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4492948362357946978, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
       propertyPath: m_IsActive
@@ -2167,9 +2263,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2661605824169579136}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockLeftTop
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_IsActive
@@ -2361,9 +2465,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2661605824169579136}
     m_Modifications:
+    - target: {fileID: 6473218286699510963, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_Name
       value: SteelWallBlockRightBottom
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6535623428025175906, guid: adf6668dfe74ba842bf453f3582767c1, type: 3}
       propertyPath: m_IsActive
@@ -2860,9 +2972,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2661605824169579136}
     m_Modifications:
+    - target: {fileID: 4412515973628987827, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4492948362357946978, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
       propertyPath: m_Name
       value: SteelWallBlock (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492948362357946978, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4492948362357946978, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
       propertyPath: m_IsActive
@@ -3041,9 +3161,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2661605824169579136}
     m_Modifications:
+    - target: {fileID: 4412515973628987827, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4492948362357946978, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
       propertyPath: m_Name
       value: SteelWallBlock (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492948362357946978, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4492948362357946978, guid: 7656cf2da87407341ac62e4a1c19b387, type: 3}
       propertyPath: m_IsActive

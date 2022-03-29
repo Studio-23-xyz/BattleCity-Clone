@@ -13,16 +13,21 @@ namespace Entities
         [SerializeField] private IdleEnemyTankAIState _idleState;
         [SerializeField] private MovingToPointEnemyTankAIState _movingToPointState;
         [SerializeField] private ShootingEnemyTankAIState _shootingState;
+        [SerializeField] private FollowPlayerState _followPlayer;
         public EnemyTankType TankType;
         public bool _isStateRunning;
+        private int _stateSwitch;
+        public bool followPlayer;
 
         public override void Init(Entity entity)
         {
             base.Init(entity);
+            _stateSwitch = 0;
 
             _idleState.Init(Self);
             _movingToPointState.Init(Self);
             _shootingState.Init(Self);
+            _followPlayer.Init(Self);
             
             setNewAiState();
         }
@@ -43,12 +48,17 @@ namespace Entities
             _idleState.UpdateState();
             _movingToPointState.UpdateState();
             _shootingState.UpdateState();
+            _followPlayer.UpdateState();
         }
 
         private void setNewAiState()
         {
+            
 
             if (_isStateRunning) return;
+
+
+            _stateSwitch++;
 
             Array values = Enum.GetValues(typeof(EnemyTankAIState));
 
@@ -62,6 +72,11 @@ namespace Entities
             else
             {
                 _state = randomBar;
+            }
+
+            if (randomBar == EnemyTankAIState.FollowPlayer && _stateSwitch < 10 &&  !followPlayer)
+            {
+                _state = _state = EnemyTankAIState.Idle;
             }
 
             _lastState = _state;
@@ -83,6 +98,9 @@ namespace Entities
                     break;
                 case EnemyTankAIState.Shooting:
                     RunShootingState();
+                    break;
+                case EnemyTankAIState.FollowPlayer:
+                    RunFollowPlayer();
                     break;
                 default:
                     RunIdleState();
@@ -106,6 +124,13 @@ namespace Entities
             _shootingState.RunState(OnStateEnd);
         }
 
+
+        public virtual void RunFollowPlayer()
+        {
+            _followPlayer.RunState(OnStateEnd);
+            _stateSwitch = 0;
+        }
+
         public virtual void OnStateEnd()
         {
             _isStateRunning = false;
@@ -117,6 +142,7 @@ namespace Entities
     {
         Idle,
         MovingToPoint,
-        Shooting
+        Shooting,
+        FollowPlayer
     }
 }

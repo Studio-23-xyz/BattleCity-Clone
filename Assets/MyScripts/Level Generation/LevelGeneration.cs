@@ -164,6 +164,7 @@ public class LevelGeneration : MonoBehaviour
     void GenerateWave()
     {
         wave.WaveGeneration = true;
+        Game.Instance.Triggers.PlayerGenerated?.Invoke();
     }
 
 

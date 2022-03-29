@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6947489977643730319}
   - component: {fileID: 6947489977643730318}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: block_waterwall_full
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 7137147739852944978}
   - component: {fileID: 7137147739852944991}
   - component: {fileID: 9167928836766171610}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WaterWallBlock
   m_TagString: Water
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3305019308819400381}
   - component: {fileID: 5272413257460239758}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WaterWallBlockParent
   m_TagString: Water
   m_Icon: {fileID: 0}

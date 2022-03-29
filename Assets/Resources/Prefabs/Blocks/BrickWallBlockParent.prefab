@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8465099528467767478}
   - component: {fileID: 565376760073288939}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BrickWallBlockParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}

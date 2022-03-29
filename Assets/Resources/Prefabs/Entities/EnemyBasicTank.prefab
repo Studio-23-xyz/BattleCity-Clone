@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 210296949592782140}
   - component: {fileID: 5400120903187343459}
   - component: {fileID: 3891511920468896405}
+  - component: {fileID: 3018383403981710437}
   m_Layer: 8
   m_Name: EnemyBasicTank
   m_TagString: Enemy
@@ -243,10 +244,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1000000
-  m_LinearDrag: 0
+  m_Mass: 1
+  m_LinearDrag: 1.5
   m_AngularDrag: 0.5
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -322,6 +323,17 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
       _idleDelay: 0.3
+    _followPlayer:
+      Self: {fileID: 0}
+      onStateStop:
+        m_PersistentCalls:
+          m_Calls: []
+      Target: {fileID: 0}
+      Speed: 0
+      NextWayPointDistance: 2
+      CurrentWayPoint: 0
+      ReachedEndOfPath: 0
+      invoked: 0
     TankType: 0
     _isStateRunning: 0
   _killingValue: 100
@@ -402,3 +414,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6e4b3b83077bda4c9e27eae330a0e33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3018383403981710437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8215817301200242970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1

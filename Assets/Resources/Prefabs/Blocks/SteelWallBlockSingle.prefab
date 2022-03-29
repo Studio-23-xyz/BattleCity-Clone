@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6473218286699510960}
   - component: {fileID: 6473218286699510961}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: block_steelwall_full
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 6535623428025175917}
   - component: {fileID: 6535623428025175907}
   - component: {fileID: 6535623428025175904}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SteelWallBlockSingle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
