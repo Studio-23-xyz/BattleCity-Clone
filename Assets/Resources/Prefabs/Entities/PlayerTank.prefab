@@ -371,7 +371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AI:
     Self: {fileID: 0}
-  MoveSpeed: 2
+  MoveSpeed: 3
   _maxHealth: 1
   _rigidbody: {fileID: 7086040485814057195}
   _spriteContainer: {fileID: 7086040486279445746}
@@ -385,8 +385,8 @@ MonoBehaviour:
   PlayerIdleAudio: {fileID: 8300000, guid: 1c4d4f29f167eae4b8fc0090e23609a6, type: 3}
   PlayerDyingAudio: {fileID: 8300000, guid: a394b5f844a864c46827c5c228cd851e, type: 3}
   movePosition: {x: 0, y: 0}
-  collison: 0
   PreviousInput: {x: 0, y: 0}
+  x: 0
 --- !u!114 &7086040485814057193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,7 +560,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   previousPostion: {x: 0, y: 0, z: 0}
-  exited: 1
 --- !u!1 &7086040486279445747
 GameObject:
   m_ObjectHideFlags: 0
