@@ -18,8 +18,9 @@ public class PlayFabController : MonoBehaviour
     private string _userPassword = " ";
     private string _userName = " ";
     public TextMeshProUGUI ErrorReport;
+    private bool loginEvent = true;
 
-
+    public GameObject SignInOption;
     public GameObject LoginPanel;
     public GameObject StartingPanel;
 
@@ -74,14 +75,20 @@ public class PlayFabController : MonoBehaviour
                 PlayFabSettings.staticSettings.TitleId = "A66CC";
             }
 
-            if (PlayerPrefs.HasKey("LoginEmail"))
+            if (PlayerPrefs.HasKey("LoginName"))
             {
 
                 SetUserEmail(PlayerPrefs.GetString("LoginEmail"));
+                SetUserName(PlayerPrefs.GetString("LoginName"));
                 SetUserPassWord(PlayerPrefs.GetString("LoginPassword"));
 
-                var request = new LoginWithEmailAddressRequest { Email = _userEmail, Password = _userPassword };
-                PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnLoginFailure);
+                //var request = new LoginWithEmailAddressRequest { Email = _userEmail, Password = _userPassword };
+
+                var request = new LoginWithPlayFabRequest {Username = _userName, Password = _userPassword};
+
+                //PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnLoginFailure);
+
+                PlayFabClientAPI.LoginWithPlayFab(request, OnLoginSuccess, OnLoginFailure);
             }
             
 
@@ -101,6 +108,7 @@ public class PlayFabController : MonoBehaviour
             return;
         }
 
+        SignInOption.SetActive(false);
         LoginPanel.SetActive(false);
         StartingPanel.SetActive(true);
         PlayerPrefs.SetString("LoginEmail", _userEmail);
@@ -116,9 +124,25 @@ public class PlayFabController : MonoBehaviour
         
         Debug.LogError(error.GenerateErrorReport());
 
+        string errorReport = error.GenerateErrorReport();
 
-        var registerNewUser = new RegisterPlayFabUserRequest { Email = _userEmail, Password = _userPassword, Username = _userName };
-        PlayFabClientAPI.RegisterPlayFabUser(registerNewUser, OnRegisterSuccess, OnRegisterFailure);
+
+        ErrorReport.gameObject.SetActive(true);
+        var result = errorReport.Substring(errorReport.LastIndexOf('\n') + 1);
+        ErrorReport.text = result;
+
+        loginEvent = false;
+
+
+
+        /*var registerNewUser = new RegisterPlayFabUserRequest {Password = _userPassword, Username = _userName , Email = _userEmail};
+
+        PlayFabClientAPI.RegisterPlayFabUser(registerNewUser, OnRegisterSuccess, OnRegisterFailure);*/
+    }
+
+    private async void SwitchPanel()
+    {
+
     }
 
     private void OnRegisterSuccess(RegisterPlayFabUserResult result)
@@ -131,6 +155,7 @@ public class PlayFabController : MonoBehaviour
         PlayFabClientAPI.UpdateUserTitleDisplayName(new UpdateUserTitleDisplayNameRequest { DisplayName = _userName },
             OnDisplayName, OnLoginFailure);
 
+        SignInOption.SetActive(false);
         LoginPanel.SetActive(false);
         StartingPanel.SetActive(true);
         GetStats();
@@ -150,6 +175,12 @@ public class PlayFabController : MonoBehaviour
 
         ErrorReport.gameObject.SetActive(true);
         var result = errorReport.Substring(errorReport.LastIndexOf('\n') + 1);
+        if (result.Contains("Email address"))
+        {
+            Debug.Log("hello error");
+             result = result.Replace("Email address", "Username");
+        }
+        Debug.Log("Register error : " +result);
         ErrorReport.text = result;
 
         /*string[] singleErrorReport = errorReport.Split('\n');
@@ -167,11 +198,13 @@ public class PlayFabController : MonoBehaviour
     public void SetUserPassWord(string password)
     {
         _userPassword = password;
+        
     }
 
     public void SetUserName(string uName)
     {
         _userName = uName;
+        SetUserEmail(_userName+"email@gmail.com" );
     }
 
     private string GetUserEmail()
@@ -192,8 +225,30 @@ public class PlayFabController : MonoBehaviour
     public void OnClickLogin()
     {
 
-        var request = new LoginWithEmailAddressRequest { Email = _userEmail, Password = _userPassword };
-        PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnLoginFailure);
+        /*var request = new LoginWithEmailAddressRequest { Email = _userEmail, Password = _userPassword };
+        PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnLoginFailure);*/
+
+
+        if (loginEvent)
+        {
+            var request = new LoginWithPlayFabRequest { Username = _userName, Password = _userPassword };
+            PlayFabClientAPI.LoginWithPlayFab(request, OnLoginSuccess, OnLoginFailure);
+        }
+        else
+        {
+            var registerNewUser = new RegisterPlayFabUserRequest { Password = _userPassword, Username = _userName, Email = _userEmail };
+
+            PlayFabClientAPI.RegisterPlayFabUser(registerNewUser, OnRegisterSuccess, OnRegisterFailure);
+        }
+
+
+
+    }
+
+
+    public void SetLoginEvent(bool login)
+    {
+        loginEvent = login;
     }
 
     #endregion

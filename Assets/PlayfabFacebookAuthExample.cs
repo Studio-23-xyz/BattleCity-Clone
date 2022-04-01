@@ -5,6 +5,7 @@ using PlayFab;
 using PlayFab.ClientModels;
 using UnityEngine;
 using LoginResult = PlayFab.ClientModels.LoginResult;
+using TMPro;
 
 #if FACEBOOK
 using Facebook.Unity;
@@ -17,6 +18,24 @@ public class PlayfabFacebookAuthExample : MonoBehaviour
     private string _message;
     private string _token;
     public GameObject login;
+    public TextMeshProUGUI text;
+    public TextMeshProUGUI text1;
+    public TextMeshProUGUI text2;
+    public TextMeshProUGUI text3;
+    public TextMeshProUGUI text4;
+    public TextMeshProUGUI text5;
+    public TextMeshProUGUI text6;
+    public TextMeshProUGUI text7;
+    public TextMeshProUGUI text8;
+    public TextMeshProUGUI text9;
+    public TextMeshProUGUI text10;
+    public TextMeshProUGUI text11;
+
+
+
+
+
+
 
     public void Start()
     {
@@ -32,6 +51,7 @@ public class PlayfabFacebookAuthExample : MonoBehaviour
     {
 
         Debug.Log("Facebook intialized");
+        text.text = "Facebook intialized";
 
         //FB.ActivateApp();
 
@@ -52,27 +72,37 @@ public class PlayfabFacebookAuthExample : MonoBehaviour
     private void ErrorFacebookInitialized(bool isunityshown)
     {
         Debug.Log("Facebook did not initalized");
+        text1.text = "Facebook did not initalized";
     }
 
     private void SendReuest()
     {
         Debug.Log("Send Request Called");
+        text2.text = "Send Request Called";
 
         PlayFabClientAPI.LoginWithFacebook(new LoginWithFacebookRequest { CreateAccount = true, AccessToken = _token },
             OnPlayfabFacebookAuthComplete, OnPlayfabFacebookAuthFailed);
 
+        //PlayFabClientAPI.LoginWithPlayFab();
+
         Debug.Log("Send Request Finished");
+        text3.text = "Send Request Finished";
     }
 
     public void FacebookLogin()
     {
+
+
+        Debug.Log("Login button called");
+
+        text4.text = "Login button called";
 
         var perms = new List<string>() { "public_profile", "email" };
 
 
         FB.LogInWithReadPermissions(perms, OnFacebookLoggedIn);
 
-        Debug.Log("Login button called");
+
 
     }
 
@@ -81,6 +111,7 @@ public class PlayfabFacebookAuthExample : MonoBehaviour
         PlayerPrefs.DeleteAll();
 
         Debug.Log("Clear button called");
+        text5.text = "Clear button called";
     }
 
 
@@ -91,14 +122,19 @@ public class PlayfabFacebookAuthExample : MonoBehaviour
         if (FB.IsLoggedIn)
         {
             Debug.Log("logged in");
+            text6.text = "logged in";
         }
 
         if (result == null || string.IsNullOrEmpty(result.Error))
         {
+            text7.text = "Facebook Auth Complete! Access Token: \" + AccessToken.CurrentAccessToken.TokenString + \"\\nLogging into PlayFab...";
             //SetMessage("Facebook Auth Complete! Access Token: " + AccessToken.CurrentAccessToken.TokenString + "\nLogging into PlayFab...");
         }
         else
         {
+
+            text8.text = "Facebook Auth Failed: \" + result.Error + \"\\n\" + result.RawResult, true";
+
             //SetMessage("Facebook Auth Failed: " + result.Error + "\n" + result.RawResult, true);
         }
 
@@ -106,10 +142,12 @@ public class PlayfabFacebookAuthExample : MonoBehaviour
         if (result.Cancelled)
         {
             Debug.Log("Cancelled Facebook Login");
+            text9.text = "Cancelled Facebook Login";
         }
         else if (result.Error != null)
         {
             Debug.Log("Error Facebook Login");
+            text10.text = "Error Facebook Login";
         }
         else
         {
@@ -132,6 +170,7 @@ public class PlayfabFacebookAuthExample : MonoBehaviour
     private void OnPlayfabFacebookAuthFailed(PlayFabError error)
     {
         SetMessage("PlayFab Facebook Auth Failed: " + error.GenerateErrorReport(), true);
+        text11.text = "PlayFab Facebook Auth Failed ";
     }
 
     public void SetMessage(string message, bool error = false)

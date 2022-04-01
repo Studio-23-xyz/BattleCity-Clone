@@ -4,16 +4,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class LeaderBoardBackButton : MonoBehaviour
+public class SignInBackButton : MonoBehaviour
 {
     public Button BackButton;
     public void SelectBackButton(InputAction.CallbackContext context)
     {
         if (!gameObject.activeInHierarchy)
             return;
-
         BackButton.GetComponent<Button>().onClick?.Invoke();
     }
-
-
 }
