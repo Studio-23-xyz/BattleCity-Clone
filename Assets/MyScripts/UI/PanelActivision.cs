@@ -6,7 +6,7 @@ using TMPro;
 public class PanelActivision : MonoBehaviour
 {
 
-    public GameObject LoginPanel;
+    //public GameObject LoginPanel;
     public GameObject StartingPanel;
     public GameObject SignUpPanel;
     public TextMeshProUGUI ButtonText;
@@ -19,7 +19,7 @@ public class PanelActivision : MonoBehaviour
         
 
         if (PanelData.Instance.ShowLoginPanel)
-            LoginPanel.SetActive(true);
+            SignUpPanel.SetActive(true);
         else
             StartingPanel.SetActive(true);
 
@@ -28,20 +28,13 @@ public class PanelActivision : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void LogInOptionSelected(string loginText)
+    /*public void LogInOptionSelected(string loginText)
     {
-        LoginPanel.SetActive(false);
+        SignUpPanel.SetActive(false);
 
         ButtonText.text = loginText;
         SignUpPanel.SetActive(true);
-    }
-
-    public void BackToLoginOptionPage()
-    {
-        SignUpPanel.SetActive(false);
-        ErrorReport.SetActive(true);
-        LoginPanel.SetActive(true);
-    }
+    }*/
 
 
 }

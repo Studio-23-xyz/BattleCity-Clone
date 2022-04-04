@@ -110,7 +110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6026463467879904983}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.393, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6026463468413275335}
@@ -214,8 +214,9 @@ MonoBehaviour:
   _killingValue: 400
   _enemyType: 3
   DamagedTankSprite:
-  - {fileID: 21300000, guid: 0b144b6a2894bc148afbfc7b40025bb1, type: 3}
-  - {fileID: 21300000, guid: 7b3862ce20c89514393b375c74c44675, type: 3}
+  - {fileID: 21300000, guid: 83f955e62b4a1974d9ebfea4ee1fcaec, type: 3}
+  - {fileID: 21300000, guid: eab1b5a3ea62468479b482b27213db61, type: 3}
+  - {fileID: 21300000, guid: 8687c85405a508040a75ef53899d2ede, type: 3}
   DamagedTankAudio: {fileID: 8300000, guid: 18cc15536a3f66a4b8b4dbaff6fc22d2, type: 3}
   DropPowerUp: 0
   PowerUps:

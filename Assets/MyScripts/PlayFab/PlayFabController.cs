@@ -21,7 +21,7 @@ public class PlayFabController : MonoBehaviour
     private bool loginEvent = true;
 
     public GameObject SignInOption;
-    public GameObject LoginPanel;
+    //public GameObject LoginPanel;
     public GameObject StartingPanel;
 
     #endregion
@@ -103,13 +103,13 @@ public class PlayFabController : MonoBehaviour
     private void OnLoginSuccess(LoginResult result)
     {
         Debug.Log("Congratulations, you made your first successful API call!");
-        if (LoginPanel == null)
+        /*if (LoginPanel == null)
         {
             return;
-        }
+        }*/
 
         SignInOption.SetActive(false);
-        LoginPanel.SetActive(false);
+        //LoginPanel.SetActive(false);
         StartingPanel.SetActive(true);
         PlayerPrefs.SetString("LoginEmail", _userEmail);
         PlayerPrefs.SetString("LoginPassword", _userPassword);
@@ -156,7 +156,7 @@ public class PlayFabController : MonoBehaviour
             OnDisplayName, OnLoginFailure);
 
         SignInOption.SetActive(false);
-        LoginPanel.SetActive(false);
+        //LoginPanel.SetActive(false);
         StartingPanel.SetActive(true);
         GetStats();
         GetHighScore();

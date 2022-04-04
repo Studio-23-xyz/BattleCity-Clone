@@ -61,14 +61,15 @@ namespace Entities
                 if (Health > 0)
                 {
                     AudioManager.Instance.PlaySFX(DamagedTankAudio);
+                    _spriteRenderer.sprite = DamagedTankSprite[Health-1];
                 }
 
-                if (Health <= _maxHealth / 2)
+                /*if (Health <= _maxHealth / 2)
                 {
                     _spriteRenderer.sprite = DamagedTankSprite[_spriteIteration];
                     _spriteIteration++;
                     _spriteIteration = Mathf.Clamp(_spriteIteration, 0, DamagedTankSprite.Length-1);
-                }
+                }*/
             }
 
 
