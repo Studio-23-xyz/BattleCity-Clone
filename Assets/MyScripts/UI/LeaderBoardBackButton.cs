@@ -9,7 +9,10 @@ public class LeaderBoardBackButton : MonoBehaviour
     public Button BackButton;
     public void SelectBackButton(InputAction.CallbackContext context)
     {
-       BackButton.GetComponent<Button>().onClick?.Invoke();
+        if (!gameObject.activeInHierarchy)
+            return;
+
+        BackButton.GetComponent<Button>().onClick?.Invoke();
     }
 
 

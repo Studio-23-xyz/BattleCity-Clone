@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PanelActivision : MonoBehaviour
 {
 
-    public GameObject LoginPanel;
+    //public GameObject LoginPanel;
     public GameObject StartingPanel;
+    public GameObject SignUpPanel;
+    public TextMeshProUGUI ButtonText;
+    public GameObject ErrorReport;
+
 
     void Start()
     {
@@ -14,7 +19,7 @@ public class PanelActivision : MonoBehaviour
         
 
         if (PanelData.Instance.ShowLoginPanel)
-            LoginPanel.SetActive(true);
+            SignUpPanel.SetActive(true);
         else
             StartingPanel.SetActive(true);
 
@@ -23,8 +28,13 @@ public class PanelActivision : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    /*public void LogInOptionSelected(string loginText)
     {
-        
-    }
+        SignUpPanel.SetActive(false);
+
+        ButtonText.text = loginText;
+        SignUpPanel.SetActive(true);
+    }*/
+
+
 }

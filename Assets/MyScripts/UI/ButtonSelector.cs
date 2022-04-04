@@ -115,7 +115,7 @@ public class ButtonSelector : MonoBehaviour
 
     public async void InvokeMethod()
     {
-        AudioManager.Instance.PlaySFX(ButtonClickSound);
+        //AudioManager.Instance.PlaySFX(ButtonClickSound);
         await UniTask.Delay(TimeSpan.FromSeconds(.5f));
         if(ButtonGameObjects[_activatedButton]!=null)
             ButtonGameObjects[_activatedButton].GetComponent<Button>().onClick?.Invoke();

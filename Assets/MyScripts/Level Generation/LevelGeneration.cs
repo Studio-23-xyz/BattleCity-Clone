@@ -48,7 +48,7 @@ public class LevelGeneration : MonoBehaviour
     public AudioClip LevelStartAudio;
     public AudioClip PlayerIdleAudio;
 
-
+    public GameObject Tutorial;
 
     void Awake()
     {
@@ -57,13 +57,17 @@ public class LevelGeneration : MonoBehaviour
 
     async void Start()
     {
+
         GenerateCity();
         AudioManager.Instance.PlayBGM(LevelStartAudio);
         await UniTask.Delay(TimeSpan.FromSeconds(LevelStartAudio.length - 2f), ignoreTimeScale: false);
         GeneratePlayerPosition();
     }
 
-
+    private async void ShowTutorial()
+    {
+        Tutorial.SetActive(true);
+    }
 
     [ContextMenu("Generate City")]
     void GenerateCity()

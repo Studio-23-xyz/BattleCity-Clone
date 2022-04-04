@@ -13,6 +13,7 @@ public class ButtonSelectorForLeaderBoard : MonoBehaviour
 
     public AudioClip ButtonClickSound;
     public AudioClip ButtonSelectionSound;
+    private bool _takeAnotherInput = true;
 
     public void SelectOption(InputAction.CallbackContext context)
     {
@@ -22,9 +23,9 @@ public class ButtonSelectorForLeaderBoard : MonoBehaviour
 
         Debug.Log(("Naviagtion Button CLicked"));
 
-        if (context.performed)
+        if (context.performed && _takeAnotherInput)
         {
-
+            
             AudioManager.Instance.PlaySFX(ButtonSelectionSound);
 
             if (context.ReadValue<Vector2>().x < 0)
@@ -90,10 +91,11 @@ public class ButtonSelectorForLeaderBoard : MonoBehaviour
 
     public async void InvokeMethod()
     {
-
-        AudioManager.Instance.PlaySFX(ButtonClickSound);
-        await UniTask.Delay(TimeSpan.FromSeconds(.5f));
+        _takeAnotherInput = false;
+        //AudioManager.Instance.PlaySFX(ButtonClickSound);
+        await UniTask.Delay(TimeSpan.FromSeconds(.1f));
 
         ButtonGameObjects[_activatedButton].GetComponent<Button>().onClick?.Invoke();
+        _takeAnotherInput = true;
     }
 }
