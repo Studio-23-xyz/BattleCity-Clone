@@ -28,6 +28,7 @@ public class PanelData : MonoBehaviour
     public void ChnagePanelValue()
     {
         ShowLoginPanel = !ShowLoginPanel;
+
     }
 
     

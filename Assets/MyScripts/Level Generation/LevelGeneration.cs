@@ -138,6 +138,9 @@ public class LevelGeneration : MonoBehaviour
 
         GeneratePlayer?.Invoke();
 
+        await UniTask.Delay(TimeSpan.FromSeconds(1.5f), ignoreTimeScale: false);
+
+
         /*foreach (var spawner in PlayerSpawner)
         {
             spawner.GetComponent<Spawner>().AnimationObject.SetActive(true);

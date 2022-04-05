@@ -36,5 +36,11 @@ public class PanelActivision : MonoBehaviour
         SignUpPanel.SetActive(true);
     }*/
 
+    public void ShowLoginPanel()
+    {
+        SignUpPanel.SetActive(PanelData.Instance.ShowLoginPanel);
+        StartingPanel.SetActive(false);
+
+    }
 
 }

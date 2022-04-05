@@ -20,7 +20,7 @@ public class ButtonSelector : MonoBehaviour
         if (!gameObject.activeInHierarchy)
             return;
 
-        Debug.Log(("Naviagtion Button CLicked"));
+        Debug.Log(("Naviagtion Button Clicked"));
 
         if (context.performed)
         {

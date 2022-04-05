@@ -22413,7 +22413,7 @@ MonoBehaviour:
   _display: {fileID: 1325385202}
   _previousScore: 0
   _currentLevel: 0
-  _playerStartingLife: 1
+  _playerStartingLife: 3
   _gameOver: {fileID: 8300000, guid: d675d752130d2894795a03bba7ce8c96, type: 3}
 --- !u!114 &1325385202
 MonoBehaviour:
