@@ -40,9 +40,22 @@ namespace Entities
             base.Update();
             if (_powerUps.Timer || Game.Instance.IsGamePaused || HitPlayer)
             {
+
+                if (GetComponent<Animator>().enabled)
+                {
+                    GetComponent<Animator>().speed = 0;
+                }
+
                 HitPlayer = false;
                 _enemyTankAI._isStateRunning = false;
                 StopMoving();
+            }
+            else
+            {
+                if (GetComponent<Animator>().enabled)
+                {
+                    GetComponent<Animator>().speed = 1;
+                }
             }
 
         }

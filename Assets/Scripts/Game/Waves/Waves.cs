@@ -96,7 +96,26 @@ namespace GameUtils
             }
 
 
-            await UniTask.Delay(TimeSpan.FromSeconds(1.5f));
+            float timer = 1.5f;
+            while(timer>0)
+            {
+                
+                if (Game.Instance.IsGamePaused)
+                {
+                    await UniTask.NextFrame();
+
+                }
+                else
+                {
+                    timer -= .1f;
+                    await UniTask.Delay(TimeSpan.FromSeconds(.1f));
+                }
+
+                
+            }
+
+
+            //await UniTask.Delay(TimeSpan.FromSeconds(1.5f));
 
             foreach (var enemy in _spawners)
             {

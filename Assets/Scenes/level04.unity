@@ -4429,7 +4429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8254265963871637519, guid: 093f5621728ca5a49b227622c5894c97, type: 3}
       propertyPath: _helmetDuration
-      value: 100
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8254265963871637519, guid: 093f5621728ca5a49b227622c5894c97, type: 3}
       propertyPath: _noBlinkingEffect
@@ -31024,6 +31024,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd5efc3892426f84ca655a9938f28626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawnerAnimation:
+  - {fileID: 2130942537}
+  - {fileID: 2072160840}
+  - {fileID: 120771423}
 --- !u!114 &2011800986
 MonoBehaviour:
   m_ObjectHideFlags: 0
