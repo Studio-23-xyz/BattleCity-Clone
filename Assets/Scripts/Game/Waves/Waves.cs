@@ -223,29 +223,39 @@ namespace GameUtils
         {
             while (_listOfRandomTank.Count > 0)
             {
-                int random = Random.Range(0, 3);
-                await GenerateEnemyAnimation(random);
 
-                bool flashyTank = false;
-                int getTankId = GetRandomTank();
-                _totalTankGeneration++;
-
-                if (_totalTankGeneration == 4 || _totalTankGeneration == 11 || _totalTankGeneration == 18)
+                if (!Game.Instance.IsGamePaused)
                 {
-                    flashyTank = true;
+                    int random = Random.Range(0, 3);
+                    await GenerateEnemyAnimation(random);
+
+                    bool flashyTank = false;
+                    int getTankId = GetRandomTank();
+                    _totalTankGeneration++;
+
+                    if (_totalTankGeneration == 4 || _totalTankGeneration == 11 || _totalTankGeneration == 18)
+                    {
+                        flashyTank = true;
+                    }
+
+                    Tank spawnedTank = _spawners[random].Spawn(_listOfRandomTank[getTankId], flashyTank) as Tank;
+
+
+                    RemoveTankFromList(getTankId);
+
+                    _spawnedTanks.Add(spawnedTank);
+
+                    _generateWave = false;
+                    _generateAnimationStop = false;
+
+
+
+                    await UniTask.Delay(TimeSpan.FromSeconds(3f));
                 }
 
-                Tank spawnedTank = _spawners[random].Spawn(_listOfRandomTank[getTankId], flashyTank) as Tank;
+                await UniTask.NextFrame();
 
 
-                RemoveTankFromList(getTankId);
-
-                _spawnedTanks.Add(spawnedTank);
-
-                _generateWave = false;
-                _generateAnimationStop = false;
-
-                await UniTask.Delay(TimeSpan.FromSeconds(3f));
 
             }
 
