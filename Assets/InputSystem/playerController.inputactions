@@ -243,7 +243,7 @@
                 {
                     "name": "",
                     "id": "d723f596-f4fa-4449-85da-3c6f493fc373",
-                    "path": "<HID::Google Inc. Stadia Controller>/button4",
+                    "path": "<HID::Google Inc. Stadia Controller>/button12",
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick",
@@ -269,6 +269,14 @@
                     "name": "Submit",
                     "type": "Button",
                     "id": "104c2162-ba5c-4635-8a29-d5a3a44c5468",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Start",
+                    "type": "Button",
+                    "id": "546a018e-a298-4536-a084-0566f26a4e77",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -677,6 +685,28 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7c332914-6443-4f79-b3f7-41ffd5d5e62a",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d0cb4503-4814-4ed7-8661-7c5cc60d10d7",
+                    "path": "<HID::Google Inc. Stadia Controller>/button12",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joystick",
+                    "action": "Start",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

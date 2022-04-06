@@ -25,11 +25,13 @@ public class PanelData : MonoBehaviour
         
     }
 
-    public void ChnagePanelValue()
+    public void ChnagePanelValue(bool state)
     {
-        ShowLoginPanel = !ShowLoginPanel;
+        ShowLoginPanel = state;
 
     }
+
+    
 
     
 }
