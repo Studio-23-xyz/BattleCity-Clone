@@ -196,6 +196,14 @@ public class PlayFabController : MonoBehaviour
         PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnLoginFailure);
     }
 
+    public void ClearData()
+    {
+        _userEmail = "";
+        _userName = "";
+        _userPassword = "";
+
+    }
+
     #endregion
 
 
