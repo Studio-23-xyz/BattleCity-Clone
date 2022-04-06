@@ -16,7 +16,16 @@ public class GameStartMenu : MonoBehaviour
     public AudioClip ButtonSelectionSound;
     public TextMeshProUGUI ErrorReport;
     public GameObject SubmitButton;
+    public GameObject ConfirmPassword;
+
     private bool _takeNextInput = true;
+    private bool _playerSignUp = false;
+
+    public TMP_InputField Username;
+    public TMP_InputField Password;
+
+    public GameObject SignUpButton;
+    public GameObject SignUpTank;
     
 
 
@@ -36,17 +45,9 @@ public class GameStartMenu : MonoBehaviour
 
         if (context.performed && _takeNextInput)
         {
-            _takeNextInput = false;
             AudioManager.Instance.PlaySFX(ButtonSelectionSound);
-            if (context.ReadValue<Vector2>().x < 0)
-            {
-                MoveLeft();
-            }
-            else if (context.ReadValue<Vector2>().x > 0)
-            {
-                MoveRight();
-            }
-            else if (context.ReadValue<Vector2>().y < 0)
+
+            if (context.ReadValue<Vector2>().y < 0)
             {
                 MoveDown();
             }
@@ -66,26 +67,14 @@ public class GameStartMenu : MonoBehaviour
         if (!gameObject.activeInHierarchy)
             return;
 
-        if (context.performed)
+        if (context.performed && !_playerSignUp)
             InvokeMethod();
+        else if(context.performed && _playerSignUp)
+            InvokeMethodSecond();
 
     }
 
 
-    public void MoveLeft()
-    {
-
-        _activatedButton = 0;
-        ShowImage();
-
-    }
-
-    public void MoveRight()
-    {
-        _activatedButton = 1;
-        ShowImage();
-
-    }
 
     public void MoveUp()
     {
@@ -95,7 +84,7 @@ public class GameStartMenu : MonoBehaviour
 
     public void MoveDown()
     {
-        _activatedButton = 2;
+        _activatedButton = 1;
         ShowImage();
     }
 
@@ -114,38 +103,94 @@ public class GameStartMenu : MonoBehaviour
         ButtonGameObjectsTanks[_activatedButton].GetComponent<Image>().enabled = true;
 
 
-        if (_activatedButton == 2)
-        {
-            _takeNextInput = true;
-            return;
-        }
 
 
-
-        foreach (var button in Buttons)
+        /*foreach (var button in Buttons)
         {
             button.GetComponent<Image>().color = new Color(1f, 1f, 1f, .5f);
         }
 
-        Buttons[_activatedButton].GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
+        Buttons[_activatedButton].GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);*/
 
-        InvokeMethod();
+        
 
 
     }
 
     public async void InvokeMethod()
     {
+        if (_activatedButton == 1)
+        {
+            _takeNextInput = false;
+        }
         //await UniTask.Delay(TimeSpan.FromSeconds(.5f));
         if (ButtonGameObjectsTanks[_activatedButton] != null)
             ButtonGameObjectsTanks[_activatedButton].GetComponent<Button>().onClick?.Invoke();
 
-        _takeNextInput = true;
+        
+
+    }
+
+    public async void InvokeMethodSecond()
+    {
+        //await UniTask.Delay(TimeSpan.FromSeconds(.5f));
+        SignUpButton.GetComponent<Button>().onClick?.Invoke();
+
+
 
     }
 
     public void ClearErrorText()
     {
+        Username.text = "";
+        Password.text = "";
         ErrorReport.text = "";
+    }
+
+    public void ReplaceLogin()
+    {
+
+        foreach (var tank in ButtonGameObjectsTanks)
+        {
+            tank.SetActive(false);
+        }
+
+        foreach (var button in Buttons)
+        {
+            button.SetActive(false);
+        }
+
+
+        ConfirmPassword.SetActive(true);
+        SignUpButton.SetActive(true);
+        SignUpTank.SetActive(true);
+
+        _playerSignUp = true;
+    }
+
+    public void Reset()
+    {
+
+
+        ConfirmPassword.SetActive(false);
+        SignUpButton.SetActive(false);
+        SignUpTank.SetActive(false);
+
+        foreach (var button in Buttons)
+        {
+            button.SetActive(true);
+        }
+
+        foreach (var tank in ButtonGameObjectsTanks)
+        {
+            tank.SetActive(true);
+        }
+
+        _playerSignUp = false;
+        _activatedButton = 0;
+        ShowImage();
+        ButtonGameObjectsTanks[_activatedButton].SetActive(true);
+        _takeNextInput = true;
+        PlayFabController.Instance.SetLoginEvent(true);
     }
 }

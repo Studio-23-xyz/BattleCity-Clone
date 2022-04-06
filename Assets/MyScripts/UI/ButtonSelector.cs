@@ -121,6 +121,10 @@ public class ButtonSelector : MonoBehaviour
             ButtonGameObjects[_activatedButton].GetComponent<Button>().onClick?.Invoke();
     }
 
-
+    public void Reset()
+    {
+        _activatedButton = 0;
+        ShowImage();
+    }
     
 }

@@ -12,10 +12,12 @@ public class PlayFabController : MonoBehaviour
 {
     public static PlayFabController Instance;
 
+    public int x;
     #region LoginData
 
     private string _userEmail = " ";
     private string _userPassword = " ";
+    private string _confirmUserPassword = "";
     private string _userName = " ";
     public TextMeshProUGUI ErrorReport;
     private bool loginEvent = true;
@@ -114,7 +116,7 @@ public class PlayFabController : MonoBehaviour
         PlayerPrefs.SetString("LoginEmail", _userEmail);
         PlayerPrefs.SetString("LoginPassword", _userPassword);
         PlayerPrefs.SetString("LoginName", _userName);
-
+        PanelData.Instance.ShowLoginPanel = false;
         GetStats();
         GetHighScore();
     }
@@ -131,7 +133,7 @@ public class PlayFabController : MonoBehaviour
         var result = errorReport.Substring(errorReport.LastIndexOf('\n') + 1);
         ErrorReport.text = result;
 
-        loginEvent = false;
+        //loginEvent = false;
 
 
 
@@ -160,7 +162,9 @@ public class PlayFabController : MonoBehaviour
         StartingPanel.SetActive(true);
         GetStats();
         GetHighScore();
-        
+        PanelData.Instance.ShowLoginPanel = false;
+
+
     }
 
     void OnDisplayName(UpdateUserTitleDisplayNameResult result)
@@ -201,6 +205,12 @@ public class PlayFabController : MonoBehaviour
         
     }
 
+    public void SetConfirmUserPassWord(string password)
+    {
+        _confirmUserPassword = password;
+
+    }
+
     public void SetUserName(string uName)
     {
         _userName = uName;
@@ -236,9 +246,22 @@ public class PlayFabController : MonoBehaviour
         }
         else
         {
-            var registerNewUser = new RegisterPlayFabUserRequest { Password = _userPassword, Username = _userName, Email = _userEmail };
 
-            PlayFabClientAPI.RegisterPlayFabUser(registerNewUser, OnRegisterSuccess, OnRegisterFailure);
+            if (_userPassword == _confirmUserPassword)
+            {
+                var registerNewUser = new RegisterPlayFabUserRequest { Password = _userPassword, Username = _userName, Email = _userEmail };
+
+                PlayFabClientAPI.RegisterPlayFabUser(registerNewUser, OnRegisterSuccess, OnRegisterFailure);
+
+            }
+            else
+            {
+                ErrorReport.gameObject.SetActive(true);
+                ErrorReport.text = "Passwords do not match";
+
+            }
+
+
         }
 
 
