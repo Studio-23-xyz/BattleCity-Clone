@@ -49,6 +49,8 @@ namespace Statistics
         public void OnPlayerKilled()
         {
             Statistics.LevelRemainingPlayerTanksCount--;
+            PlayerPrefs.SetInt("PlayerLifeCount", Statistics.LevelRemainingPlayerTanksCount);
+
 
             _display.UpdateDisplay(Statistics);
 

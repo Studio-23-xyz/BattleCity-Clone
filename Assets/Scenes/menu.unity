@@ -13605,6 +13605,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1592705458}
+        m_TargetAssemblyTypeName: TutorialButtonClick, Assembly-CSharp
+        m_MethodName: SubmitOption
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 104c2162-ba5c-4635-8a29-d5a3a44c5468
     m_ActionName: UI/Submit[/Keyboard/enter]
   - m_PersistentCalls:
@@ -13656,19 +13668,7 @@ MonoBehaviour:
     m_ActionId: 8093e69f-9a0f-4750-b057-756c886d697b
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1592705458}
-        m_TargetAssemblyTypeName: TutorialButtonClick, Assembly-CSharp
-        m_MethodName: SubmitOption
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 546a018e-a298-4536-a084-0566f26a4e77
     m_ActionName: UI/Start[/Keyboard/enter,/Google Inc. Stadia Controller/button12]
   m_NeverAutoSwitchControlSchemes: 0
