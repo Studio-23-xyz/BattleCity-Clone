@@ -274,6 +274,15 @@ public class PlayFabController : MonoBehaviour
         loginEvent = login;
     }
 
+    public void CleanData()
+    {
+        _userName = "";
+        _userPassword = "";
+        _userEmail = "";
+        _confirmUserPassword = "";
+    }
+
+
     #endregion
 
 

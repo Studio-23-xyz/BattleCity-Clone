@@ -6,9 +6,15 @@ using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class LevelEndUI : MonoBehaviour
 {
+
+
+
+
+
     [SerializeField] private string _nextLevelScene;
     [SerializeField] private int _nextLevelDelay = 5000;
 
@@ -26,12 +32,56 @@ public class LevelEndUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _powerTankTotalScore;
     [SerializeField] private TextMeshProUGUI _armorTankTotalScore;
 
+    public bool Skip;
+    public bool NextCalculation;
+    public float timer;
 
     public AudioClip _calculationSound;
+
+    void Start()
+    {
+        Skip = false;
+        NextCalculation = false;
+        timer = 0;
+    }
     public void Initialization()
     {
         LevelEndCalculation();
     }
+
+
+    void Update()
+    {
+        if (timer <= 0)
+        {
+            NextCalculation = true;
+        }
+        else
+        {
+            timer -= Time.deltaTime;
+        }
+    }
+
+
+
+    public void SelectOption(InputAction.CallbackContext context)
+    {
+
+        if (!gameObject.activeInHierarchy)
+            return;
+
+        Debug.Log(("Levelover Button Clicked"));
+
+        if (context.performed)
+        {
+            Skip = true;
+        }
+
+
+
+    }
+
+
 
     private async void LevelEndCalculation()
     {
@@ -56,7 +106,13 @@ public class LevelEndUI : MonoBehaviour
         scoreText.text = "0";
         totalScoreText.text = "0";
         AudioManager.Instance.PlaySFX(_calculationSound);
-        await UniTask.Delay(TimeSpan.FromSeconds((_calculationSound.length)));
+        //await UniTask.Delay(TimeSpan.FromSeconds((_calculationSound.length)));
+
+        NextCalculation = false;
+        timer = _calculationSound.length;
+        await UniTask.WaitUntil((() => Skip || NextCalculation));
+
+
 
         for (int i = 1; i <= DestroyedTank.instance.TankTypeDestroyed[tankType]; i++)
         {
@@ -64,9 +120,27 @@ public class LevelEndUI : MonoBehaviour
 
             totalScoreText.text = (((int) tankType + 1) * 100 * i).ToString();
             AudioManager.Instance.PlaySFX(_calculationSound);
-            await UniTask.Delay(TimeSpan.FromSeconds((_calculationSound.length / 2)));
+
+            //await UniTask.Delay(TimeSpan.FromSeconds((_calculationSound.length / 2)));
+
+
+
+            NextCalculation = false;
+            timer = _calculationSound.length / 2;
+
+            await UniTask.WaitUntil((() => Skip || NextCalculation));
+
+            
+
         }
     }
+
+    public async void WaitforSomeTime()
+    {
+        await UniTask.Delay(TimeSpan.FromSeconds((_calculationSound.length / 2)));
+    }
+
+    
 
     private async UniTask CalculateTotalTank()
     {

@@ -10,6 +10,8 @@ using TMPro;
 public class GameStartMenu : MonoBehaviour
 {
     public GameObject[] ButtonGameObjectsTanks;
+    public GameObject[] RegisterButtonsTanks;
+    public GameObject[] RegisterButtons;
     public GameObject[] Buttons;
     [SerializeField] private int _activatedButton = 0;
     public AudioClip ButtonClickSound;
@@ -23,6 +25,7 @@ public class GameStartMenu : MonoBehaviour
 
     public TMP_InputField Username;
     public TMP_InputField Password;
+    public TMP_InputField ConfirmPasswordText;
 
     public GameObject SignUpButton;
     public GameObject SignUpTank;
@@ -92,15 +95,23 @@ public class GameStartMenu : MonoBehaviour
 
     public void ShowImage()
     {
-        foreach (var button in ButtonGameObjectsTanks)
+
+        if (!_playerSignUp)
         {
-            button.GetComponent<Image>().enabled = false;
+            foreach (var button in ButtonGameObjectsTanks)
+            {
+                button.GetComponent<Image>().enabled = false;
+            }
+            ButtonGameObjectsTanks[_activatedButton].GetComponent<Image>().enabled = true;
         }
-
-
-
-
-        ButtonGameObjectsTanks[_activatedButton].GetComponent<Image>().enabled = true;
+        else if (_playerSignUp)
+        {
+            foreach (var button in RegisterButtonsTanks)
+            {
+                button.GetComponent<Image>().enabled = false;
+            }
+            RegisterButtonsTanks[_activatedButton].GetComponent<Image>().enabled = true;
+        }
 
 
 
@@ -112,17 +123,17 @@ public class GameStartMenu : MonoBehaviour
 
         Buttons[_activatedButton].GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);*/
 
-        
+
 
 
     }
 
     public async void InvokeMethod()
     {
-        if (_activatedButton == 1)
+        /*if (_activatedButton == 1)
         {
             _takeNextInput = false;
-        }
+        }*/
         //await UniTask.Delay(TimeSpan.FromSeconds(.5f));
         if (ButtonGameObjectsTanks[_activatedButton] != null)
             ButtonGameObjectsTanks[_activatedButton].GetComponent<Button>().onClick?.Invoke();
@@ -134,7 +145,7 @@ public class GameStartMenu : MonoBehaviour
     public async void InvokeMethodSecond()
     {
         //await UniTask.Delay(TimeSpan.FromSeconds(.5f));
-        SignUpButton.GetComponent<Button>().onClick?.Invoke();
+        RegisterButtons[_activatedButton].GetComponent<Button>().onClick?.Invoke();
 
 
 
@@ -145,6 +156,8 @@ public class GameStartMenu : MonoBehaviour
         Username.text = "";
         Password.text = "";
         ErrorReport.text = "";
+        ConfirmPasswordText.text = "";
+
     }
 
     public void ReplaceLogin()
@@ -160,12 +173,24 @@ public class GameStartMenu : MonoBehaviour
             button.SetActive(false);
         }
 
+        foreach (var button in RegisterButtons)
+        {
+            button.SetActive(true);
+        }
+
+
+        foreach (var button in RegisterButtonsTanks)
+        {
+            button.SetActive(true);
+        }
 
         ConfirmPassword.SetActive(true);
-        SignUpButton.SetActive(true);
-        SignUpTank.SetActive(true);
+        /*SignUpButton.SetActive(true);
+        SignUpTank.SetActive(true);*/
 
         _playerSignUp = true;
+        _activatedButton = 0;
+        ShowImage();
     }
 
     public void Reset()
@@ -173,8 +198,20 @@ public class GameStartMenu : MonoBehaviour
 
 
         ConfirmPassword.SetActive(false);
-        SignUpButton.SetActive(false);
-        SignUpTank.SetActive(false);
+
+        foreach (var button in RegisterButtons)
+        {
+            button.SetActive(false);
+        }
+
+
+        foreach (var button in RegisterButtonsTanks)
+        {
+            button.SetActive(false);
+        }
+
+        /*SignUpButton.SetActive(false);
+        SignUpTank.SetActive(false);*/
 
         foreach (var button in Buttons)
         {
@@ -190,7 +227,7 @@ public class GameStartMenu : MonoBehaviour
         _activatedButton = 0;
         ShowImage();
         ButtonGameObjectsTanks[_activatedButton].SetActive(true);
-        _takeNextInput = true;
+        //_takeNextInput = true;
         PlayFabController.Instance.SetLoginEvent(true);
     }
 }
