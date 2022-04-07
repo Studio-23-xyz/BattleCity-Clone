@@ -4854,7 +4854,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press Select To Continue....
+  m_text: Press Start To Continue....
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e1c7d50a5759bff4bbcc1498fa17b07c, type: 2}
   m_sharedMaterial: {fileID: -3260639913122552478, guid: e1c7d50a5759bff4bbcc1498fa17b07c, type: 2}

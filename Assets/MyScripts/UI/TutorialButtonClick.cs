@@ -48,7 +48,10 @@ public class TutorialButtonClick : MonoBehaviour
                 break;
             _text.SetActive(state);
             state = !state;
-            await UniTask.Delay(TimeSpan.FromSeconds(1f));
+            if(state)
+                await UniTask.Delay(TimeSpan.FromSeconds(.5f));
+            else
+                await UniTask.Delay(TimeSpan.FromSeconds(1f));
         }
     }
 }

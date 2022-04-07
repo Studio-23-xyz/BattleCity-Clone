@@ -221,7 +221,7 @@
                 {
                     "name": "",
                     "id": "915ec0cb-1d2b-445b-9365-686814564c17",
-                    "path": "<Gamepad>/buttonWest",
+                    "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
