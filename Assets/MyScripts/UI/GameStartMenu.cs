@@ -21,7 +21,7 @@ public class GameStartMenu : MonoBehaviour
     public GameObject ConfirmPassword;
 
     private bool _takeNextInput = true;
-    private bool _playerSignUp = false;
+    [SerializeField]private bool _playerSignUp = false;
 
     public TMP_InputField Username;
     public TMP_InputField Password;
@@ -29,7 +29,16 @@ public class GameStartMenu : MonoBehaviour
 
     public GameObject SignUpButton;
     public GameObject SignUpTank;
-    
+
+    [SerializeField]private int _previousActivatedButton;
+
+
+
+    void Start()
+    {
+        _activatedButton = 0;
+        ShowImage();
+    }
 
 
     public void ResetActivateButton()
@@ -81,13 +90,27 @@ public class GameStartMenu : MonoBehaviour
 
     public void MoveUp()
     {
-        _activatedButton = 0;
+        _previousActivatedButton = _activatedButton;
+        int max;
+        if (_playerSignUp)
+            max = RegisterButtons.Length - 1;
+        else
+            max = Buttons.Length - 1;
+        _activatedButton = Mathf.Clamp(--_activatedButton, 0, max);
         ShowImage();
     }
 
     public void MoveDown()
     {
-        _activatedButton = 1;
+
+        _previousActivatedButton = _activatedButton;
+        int max;
+        if (_playerSignUp)
+            max = RegisterButtons.Length - 1;
+        else
+            max = Buttons.Length - 1;
+        _activatedButton = Mathf.Clamp(++_activatedButton, 0, max);
+
         ShowImage();
     }
 
@@ -103,6 +126,18 @@ public class GameStartMenu : MonoBehaviour
                 button.GetComponent<Image>().enabled = false;
             }
             ButtonGameObjectsTanks[_activatedButton].GetComponent<Image>().enabled = true;
+
+
+            if (_activatedButton == 0 || _activatedButton == 1)
+            {
+                InvokeMethod();
+                DisableInputFieldSelect();
+            }
+            else
+            {
+                DisableInputFieldSelect();
+            }
+
         }
         else if (_playerSignUp)
         {
@@ -111,20 +146,17 @@ public class GameStartMenu : MonoBehaviour
                 button.GetComponent<Image>().enabled = false;
             }
             RegisterButtonsTanks[_activatedButton].GetComponent<Image>().enabled = true;
+            if (_activatedButton == 0 || _activatedButton == 1 || _activatedButton == 2)
+            {
+                InvokeMethodSecond();
+            }
+            else
+            {
+                DisableInputFieldSelect();
+            }
+
+
         }
-
-
-
-
-        /*foreach (var button in Buttons)
-        {
-            button.GetComponent<Image>().color = new Color(1f, 1f, 1f, .5f);
-        }
-
-        Buttons[_activatedButton].GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);*/
-
-
-
 
     }
 
@@ -145,9 +177,8 @@ public class GameStartMenu : MonoBehaviour
     public async void InvokeMethodSecond()
     {
         //await UniTask.Delay(TimeSpan.FromSeconds(.5f));
-        RegisterButtons[_activatedButton].GetComponent<Button>().onClick?.Invoke();
-
-
+        if (RegisterButtonsTanks[_activatedButton] != null)
+            RegisterButtonsTanks[_activatedButton].GetComponent<Button>().onClick?.Invoke();
 
     }
 
@@ -168,10 +199,24 @@ public class GameStartMenu : MonoBehaviour
             tank.SetActive(false);
         }
 
+        /*for (int i = ButtonGameObjectsTanks.Length- 1; i > 1 ; i--)
+        {
+            ButtonGameObjectsTanks[i].SetActive(false);
+        }*/
+
+
+
         foreach (var button in Buttons)
         {
             button.SetActive(false);
         }
+
+        /*for (int i = Buttons.Length - 1; i > 1; i--)
+        {
+            Buttons[i].SetActive(false);
+        }*/
+
+
 
         foreach (var button in RegisterButtons)
         {
@@ -223,11 +268,48 @@ public class GameStartMenu : MonoBehaviour
             tank.SetActive(true);
         }
 
+
+        /*for (int i = ButtonGameObjectsTanks.Length - 1; i > 1; i--)
+        {
+            ButtonGameObjectsTanks[i].SetActive(true);
+        }
+
+
+        for (int i = Buttons.Length - 1; i > 1; i--)
+        {
+            Buttons[i].SetActive(true);
+        }
+        */
+
+
+
         _playerSignUp = false;
         _activatedButton = 0;
         ShowImage();
         ButtonGameObjectsTanks[_activatedButton].SetActive(true);
         //_takeNextInput = true;
         PlayFabController.Instance.SetLoginEvent(true);
+    }
+
+
+    public void InputFieldSelect()
+    {
+        Debug.Log("Input Field Selected");
+        if(!_playerSignUp)
+            Buttons[_activatedButton].GetComponent<TMP_InputField>()?.ActivateInputField();
+        else
+            RegisterButtons[_activatedButton].GetComponent<TMP_InputField>()?.ActivateInputField();
+
+
+    }
+
+    public void DisableInputFieldSelect()
+    {
+        if(!_playerSignUp)
+            Buttons[_previousActivatedButton].GetComponent<TMP_InputField>()?.DeactivateInputField();
+        else
+            RegisterButtons[_previousActivatedButton].GetComponent<TMP_InputField>()?.DeactivateInputField();
+
+
     }
 }

@@ -56,6 +56,7 @@ namespace Statistics
 
             if(Statistics.LevelRemainingPlayerTanksCount <= 0)
             {
+                Game.Instance.isLevelCompleted = true;
                 Game.Instance.isLevelDone = true;
                 AudioManager.Instance.StopAll();
 

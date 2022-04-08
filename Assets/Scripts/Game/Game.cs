@@ -21,6 +21,7 @@ namespace GameUtils
         public bool IsGamePaused;
         public bool MovePlayer;
         public bool checkCollison;
+        public bool isLevelCompleted;
 
         public override void Awake()
         {
@@ -52,6 +53,8 @@ namespace GameUtils
 
             if(StatisticsCollector.Statistics.TanksKilled >= _tanksToKill)
             {
+                Game.Instance.isLevelCompleted = true;
+
                 StatisticsCollector.UpdateTotalScore();
                 StatisticsCollector.SetStageLevel();
                 Debug.Log("All tanks killed");

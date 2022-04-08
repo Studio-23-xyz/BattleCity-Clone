@@ -14,7 +14,7 @@ public class PauseGame : MonoBehaviour
     {
         
 
-        if (context.performed && !GameUtils.Game.Instance.isLevelDone)
+        if (context.performed && !GameUtils.Game.Instance.isLevelCompleted)
         {
             Debug.Log("Pause button clicked");
             Game.Instance.ChangeState();
@@ -24,7 +24,7 @@ public class PauseGame : MonoBehaviour
 
     public void PauseGamePanel()
     {
-        if(!GameUtils.Game.Instance.isLevelDone)
+        if(!GameUtils.Game.Instance.isLevelCompleted)
             Pause.SetActive(!Pause.activeInHierarchy);
     }
 }
