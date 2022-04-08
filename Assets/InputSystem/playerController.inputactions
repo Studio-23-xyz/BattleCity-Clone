@@ -209,17 +209,6 @@
                 },
                 {
                     "name": "",
-                    "id": "cd543dce-b5d4-4bf4-b27e-699dc8dd7beb",
-                    "path": "<Keyboard>/enter",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Pause",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "915ec0cb-1d2b-445b-9365-686814564c17",
                     "path": "<Gamepad>/start",
                     "interactions": "",
@@ -492,6 +481,17 @@
                 },
                 {
                     "name": "",
+                    "id": "6fca58f0-3423-4471-aa4a-6a92deadfc5b",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "82627dcc-3b13-4ba9-841d-e4b746d6553e",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
@@ -519,6 +519,28 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "400d6fdd-51ab-48ae-8af1-941a18b0e9d8",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2e5f1c9f-484b-4039-972f-81523736696d",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "Cancel",
                     "isComposite": false,
                     "isPartOfComposite": false

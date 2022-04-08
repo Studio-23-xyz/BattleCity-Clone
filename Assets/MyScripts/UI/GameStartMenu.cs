@@ -31,11 +31,13 @@ public class GameStartMenu : MonoBehaviour
     public GameObject SignUpTank;
 
     [SerializeField]private int _previousActivatedButton;
+    [SerializeField] private bool _InputNotFocused = true;
 
 
 
     void Start()
     {
+        _InputNotFocused = false;
         _activatedButton = 0;
         ShowImage();
     }
@@ -55,7 +57,7 @@ public class GameStartMenu : MonoBehaviour
 
         Debug.Log(("Naviagtion Button CLicked"));
 
-        if (context.performed && _takeNextInput)
+        if (context.performed && _takeNextInput && _InputNotFocused)
         {
             AudioManager.Instance.PlaySFX(ButtonSelectionSound);
 
@@ -83,6 +85,24 @@ public class GameStartMenu : MonoBehaviour
             InvokeMethod();
         else if(context.performed && _playerSignUp)
             InvokeMethodSecond();
+
+    }
+
+
+    public void CancelInput(InputAction.CallbackContext context)
+    {
+        if (!gameObject.activeInHierarchy)
+            return;
+
+        if (context.performed)
+        {
+
+            _InputNotFocused = true;
+            ChangeButtonColor();
+            //MoveDown();
+        }
+
+        //do something to visibly indicate that input is selected
 
     }
 
@@ -116,6 +136,24 @@ public class GameStartMenu : MonoBehaviour
 
 
 
+
+
+    public void ChangeButtonColor()
+    {
+        if (!_playerSignUp)
+        {
+            if(_activatedButton<2)
+                Buttons[_activatedButton].GetComponent<Image>().color = new Color(1f, 1f, 1f, .7f);
+        }
+
+        else if (_playerSignUp)
+        {
+            if(_activatedButton <3)
+                RegisterButtons[_activatedButton].GetComponent<Image>().color = new Color(1f, 1f, 1f, .7f);
+        }
+    }
+
+
     public void ShowImage()
     {
 
@@ -126,6 +164,14 @@ public class GameStartMenu : MonoBehaviour
                 button.GetComponent<Image>().enabled = false;
             }
             ButtonGameObjectsTanks[_activatedButton].GetComponent<Image>().enabled = true;
+
+
+            foreach (var button in Buttons)
+            {
+                button.GetComponent<Image>().color = new Color(1f, 1f, 1f, .4f);
+            }
+
+            Buttons[_activatedButton].GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
 
 
             if (_activatedButton == 0 || _activatedButton == 1)
@@ -146,6 +192,16 @@ public class GameStartMenu : MonoBehaviour
                 button.GetComponent<Image>().enabled = false;
             }
             RegisterButtonsTanks[_activatedButton].GetComponent<Image>().enabled = true;
+
+
+            foreach (var button in RegisterButtons)
+            {
+                button.GetComponent<Image>().color = new Color(1f, 1f, 1f, .4f);
+            }
+
+            RegisterButtons[_activatedButton].GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
+
+
             if (_activatedButton == 0 || _activatedButton == 1 || _activatedButton == 2)
             {
                 InvokeMethodSecond();
@@ -294,6 +350,7 @@ public class GameStartMenu : MonoBehaviour
 
     public void InputFieldSelect()
     {
+        _InputNotFocused = false;
         Debug.Log("Input Field Selected");
         if(!_playerSignUp)
             Buttons[_activatedButton].GetComponent<TMP_InputField>()?.ActivateInputField();
@@ -311,5 +368,10 @@ public class GameStartMenu : MonoBehaviour
             RegisterButtons[_previousActivatedButton].GetComponent<TMP_InputField>()?.DeactivateInputField();
 
 
+    }
+
+    public void SetUpDownBool(bool state)
+    {
+        _InputNotFocused = state;
     }
 }

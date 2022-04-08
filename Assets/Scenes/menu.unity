@@ -557,6 +557,7 @@ MonoBehaviour:
   SignUpButton: {fileID: 784625530}
   SignUpTank: {fileID: 1834096405}
   _previousActivatedButton: 0
+  _upDown: 1
 --- !u!1 &54283334
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,7 +2037,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -310}
+  m_AnchoredPosition: {x: -0.000024319, y: -307.1}
   m_SizeDelta: {x: 592.1857, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &301243113
@@ -3149,7 +3150,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -133.75, y: -141}
+  m_AnchoredPosition: {x: -129.8, y: -150.60002}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &383530468
@@ -4865,7 +4866,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 3c68ae9f5e0c620429b57847be6e0497, type: 3}
+  m_Texture: {fileID: 2800000, guid: a06d72c351fe4674dabf79937c73e982, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -8496,7 +8497,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000049591155, y: -141}
+  m_AnchoredPosition: {x: 0.000011444, y: -150.6}
   m_SizeDelta: {x: 160, y: 48.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1270744522
@@ -8592,7 +8593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8650,11 +8651,11 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_ActionsAsset: {fileID: -944628639613478452, guid: 795418adc195604449fc0ca9706fc091, type: 3}
-  m_PointAction: {fileID: -6329942375731355784, guid: 795418adc195604449fc0ca9706fc091, type: 3}
+  m_PointAction: {fileID: 0}
   m_MoveAction: {fileID: -4919195566381544087, guid: 795418adc195604449fc0ca9706fc091, type: 3}
   m_SubmitAction: {fileID: 6760649574166554397, guid: 795418adc195604449fc0ca9706fc091, type: 3}
   m_CancelAction: {fileID: -462254416549509755, guid: 795418adc195604449fc0ca9706fc091, type: 3}
-  m_LeftClickAction: {fileID: -546791666766759656, guid: 795418adc195604449fc0ca9706fc091, type: 3}
+  m_LeftClickAction: {fileID: 0}
   m_MiddleClickAction: {fileID: -1680810141469020093, guid: 795418adc195604449fc0ca9706fc091, type: 3}
   m_RightClickAction: {fileID: -8318497158294618991, guid: 795418adc195604449fc0ca9706fc091, type: 3}
   m_ScrollWheelAction: {fileID: 9174874774964230545, guid: 795418adc195604449fc0ca9706fc091, type: 3}
@@ -9677,7 +9678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.8}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.4}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11474,7 +11475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11779,8 +11780,8 @@ MonoBehaviour:
   m_RichText: 1
   m_GlobalFontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_OnFocusSelectAll: 0
-  m_ResetOnDeActivation: 1
-  m_RestoreOriginalTextOnEscape: 1
+  m_ResetOnDeActivation: 0
+  m_RestoreOriginalTextOnEscape: 0
   m_isRichTextEditingAllowed: 0
   m_LineLimit: 0
   m_InputValidator: {fileID: 0}
@@ -11797,7 +11798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.8}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.4}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -13232,8 +13233,8 @@ MonoBehaviour:
   m_RichText: 1
   m_GlobalFontAsset: {fileID: 11400000, guid: b269756ffdeaf2b42b9bb93fb86b40e8, type: 2}
   m_OnFocusSelectAll: 0
-  m_ResetOnDeActivation: 1
-  m_RestoreOriginalTextOnEscape: 1
+  m_ResetOnDeActivation: 0
+  m_RestoreOriginalTextOnEscape: 0
   m_isRichTextEditingAllowed: 0
   m_LineLimit: 0
   m_InputValidator: {fileID: 0}
@@ -14047,6 +14048,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1957103674}
         m_TargetAssemblyTypeName: LeaderBoardBackButton, Assembly-CSharp
         m_MethodName: SelectBackButton
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 16610630}
+        m_TargetAssemblyTypeName: GameStartMenu, Assembly-CSharp
+        m_MethodName: CancelInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

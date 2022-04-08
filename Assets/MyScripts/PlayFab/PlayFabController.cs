@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using Cysharp.Threading.Tasks;
 using PlayFab;
 using PlayFab.ClientModels;
 //using PlayFab.PfEditor.Json;
@@ -121,7 +123,7 @@ public class PlayFabController : MonoBehaviour
         GetHighScore();
     }
 
-    private void OnLoginFailure(PlayFabError error)
+    private async void OnLoginFailure(PlayFabError error)
     {
         
         Debug.LogError(error.GenerateErrorReport());
@@ -131,6 +133,10 @@ public class PlayFabController : MonoBehaviour
 
         ErrorReport.gameObject.SetActive(true);
         var result = errorReport.Substring(errorReport.LastIndexOf('\n') + 1);
+        ErrorReport.text = "";
+        await UniTask.Delay(TimeSpan.FromSeconds(.5f));
+
+
         ErrorReport.text = result;
 
         //loginEvent = false;
@@ -172,7 +178,7 @@ public class PlayFabController : MonoBehaviour
         Debug.Log(result.DisplayName + " is your new display name");
     }
 
-    private void OnRegisterFailure(PlayFabError error)
+    private async void OnRegisterFailure(PlayFabError error)
     {
         string errorReport = error.GenerateErrorReport();
         
@@ -185,6 +191,10 @@ public class PlayFabController : MonoBehaviour
              result = result.Replace("Email address", "Username");
         }
         Debug.Log("Register error : " +result);
+        ErrorReport.text = "";
+        await UniTask.Delay(TimeSpan.FromSeconds(.5f));
+
+
         ErrorReport.text = result;
 
         /*string[] singleErrorReport = errorReport.Split('\n');
@@ -257,6 +267,9 @@ public class PlayFabController : MonoBehaviour
             else
             {
                 ErrorReport.gameObject.SetActive(true);
+
+
+
                 ErrorReport.text = "Passwords do not match";
 
             }
