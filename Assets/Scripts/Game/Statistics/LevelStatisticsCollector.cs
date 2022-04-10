@@ -166,6 +166,12 @@ namespace Statistics
             {
                 PlayerPrefs.SetInt("StageCount", 1);
             }
+
+            if (PlayerPrefs.HasKey("SetHighestStage"))
+            {
+                if(PlayerPrefs.GetInt("StageCount") - 1 > PlayerPrefs.GetInt("SetHighestStage") )
+                    PlayerPrefs.SetInt("SetHighestStage", PlayerPrefs.GetInt("StageCount") - 1);
+            }
         }
 
         public int GetStageLevel()

@@ -71,6 +71,7 @@ namespace Blocks
             {
                 if (!_isDied)
                 {
+                    Game.Instance.isLevelCompleted = true;
                     Game.Instance.isLevelDone = true;
                     AudioManager.Instance.StopAll();
 

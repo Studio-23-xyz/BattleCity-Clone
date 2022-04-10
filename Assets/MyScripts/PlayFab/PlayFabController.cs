@@ -305,7 +305,7 @@ public class PlayFabController : MonoBehaviour
     public void SetPlayerData(int score)
     {
         PlayerHighScore = score;
-        PlayerCompletedLevel = PlayerPrefs.GetInt("StageCount") - 1;
+        PlayerCompletedLevel = PlayerPrefs.GetInt("SetHighestStage");
         StartCloudUpdatePlayerStats();
     }
 
@@ -346,10 +346,15 @@ public class PlayFabController : MonoBehaviour
             {
                 case "PlayerCompletedLevel":
                     PlayerCompletedLevel = eachStat.Value;
+                    PlayerPrefs.SetInt("SetHighestStage", PlayerCompletedLevel);
+                    Debug.Log("current player level : " + PlayerCompletedLevel);
+
                     break;
 
                 case "PlayerHighScore":
                     PlayerHighScore = eachStat.Value;
+                    PlayerPrefs.SetInt("HighScore", PlayerHighScore);
+                    Debug.Log("current player highscore : "+ PlayerHighScore);
                     break;
 
                 case "PlayerId":
